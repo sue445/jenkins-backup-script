@@ -46,3 +46,7 @@ ex.
 ./jenkins-backup.sh $JENKINS_HOME /path/to/backup_`date +"%Y%m%d%H%M%S"`.tar.gz
 ```
 
+# Operability confirmed
+* Debian lenny
+* CentOS 6
+
