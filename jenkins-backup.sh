@@ -19,7 +19,9 @@ if [ -z "$JENKINS_HOME" -o -z "$DIST_FILE" ] ; then
   exit 1
 fi
 
-rm $TMP_DIR/$TMP_TAR_NAME
+if [[ -f "$TMP_DIR/$TMP_TAR_NAME" ]]; then
+    rm $TMP_DIR/$TMP_TAR_NAME
+fi
 rm -rf $ARC_DIR
 mkdir $ARC_DIR
 mkdir $ARC_DIR/plugins
