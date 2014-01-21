@@ -27,9 +27,9 @@ https://wiki.jenkins-ci.org/display/JENKINS/Exclusive+Execution+Plugin
 git@github.com:sue445/jenkins-backup-script.git
 ```
 
-**Recommended** : specify Branch Specifier with latest release tag (ex. 0.0.1)
+**Recommended** : specify Branch Specifier with latest release tag (ex. 0.0.2)
 
-![img](http://cdn-ak.f.st-hatena.com/images/fotolife/s/sue445/20131208/20131208002941.png)
+![0.0.2](http://cdn-ak.f.st-hatena.com/images/fotolife/s/sue445/20140121/20140121144153.png)
 
 ### Build Triggers > Build periodically
 ![img](http://cdn-ak.f.st-hatena.com/images/fotolife/s/sue445/20131110/20131110180825.png)
