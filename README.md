@@ -50,3 +50,14 @@ ex.
 * Debian lenny
 * CentOS 6
 
+# Changelog
+## master
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.2...master)
+
+## 0.0.2
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.1...0.0.2)
+
+* remove archive file if exixts
+
+## 0.0.1
+* first release
