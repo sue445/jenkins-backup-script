@@ -23,9 +23,8 @@ if [[ -f "$TMP_DIR/$TMP_TAR_NAME" ]]; then
     rm $TMP_DIR/$TMP_TAR_NAME
 fi
 rm -rf $ARC_DIR
-mkdir $ARC_DIR
-mkdir $ARC_DIR/plugins
-mkdir $ARC_DIR/jobs
+mkdir -p $ARC_DIR/plugins
+mkdir -p $ARC_DIR/jobs
 
 echo "cp $JENKINS_HOME/*.xml $ARC_DIR"
 cp $JENKINS_HOME/*.xml $ARC_DIR
@@ -36,8 +35,8 @@ cp $JENKINS_HOME/plugins/*.jpi $ARC_DIR/plugins
 cd $JENKINS_HOME/jobs/
 for job_name in `ls -d *`
 do
-  echo "mkdir $ARC_DIR/jobs/$job_name/"
-  mkdir $ARC_DIR/jobs/$job_name/
+  echo "mkdir -p $ARC_DIR/jobs/$job_name/"
+  mkdir -p $ARC_DIR/jobs/$job_name/
 
   echo "cp $JENKINS_HOME/jobs/$job_name/*.xml $ARC_DIR/jobs/$job_name/"
   cp $JENKINS_HOME/jobs/$job_name/*.xml $ARC_DIR/jobs/$job_name/
