@@ -33,13 +33,13 @@ echo "cp $JENKINS_HOME/plugins/*.jpi $ARC_DIR/plugins"
 cp $JENKINS_HOME/plugins/*.jpi $ARC_DIR/plugins
 
 cd $JENKINS_HOME/jobs/
-for job_name in `ls -d *`
+ls -1 | while read job_name
 do
   echo "mkdir -p $ARC_DIR/jobs/$job_name/"
-  mkdir -p $ARC_DIR/jobs/$job_name/
+  mkdir -p $ARC_DIR/jobs/"$job_name"/
 
   echo "cp $JENKINS_HOME/jobs/$job_name/*.xml $ARC_DIR/jobs/$job_name/"
-  cp $JENKINS_HOME/jobs/$job_name/*.xml $ARC_DIR/jobs/$job_name/
+  cp $JENKINS_HOME/jobs/"$job_name"/*.xml $ARC_DIR/jobs/"$job_name"/
 done
 
 cd $TMP_DIR
