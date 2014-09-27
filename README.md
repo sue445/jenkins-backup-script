@@ -69,7 +69,7 @@ ex.
 ## 0.0.2
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.1...0.0.2)
 
-* remove archive file if exixts
+* remove archive file if exists
 
 ## 0.0.1
 * first release
