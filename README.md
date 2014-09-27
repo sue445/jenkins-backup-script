@@ -27,7 +27,8 @@ https://wiki.jenkins-ci.org/display/JENKINS/Exclusive+Execution+Plugin
 git@github.com:sue445/jenkins-backup-script.git
 ```
 
-**Recommended** : specify Branch Specifier with latest release tag (ex. 0.0.3)
+* **Recommended** : specify Branch Specifier with latest release tag
+* latest tag is `0.0.4`
 
 ![0.0.3](http://f.st-hatena.com/images/fotolife/s/sue445/20140331/20140331010645.png)
 
@@ -52,7 +53,13 @@ ex.
 
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.3...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.4...master)
+
+## 0.0.4
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.3...0.0.4)
+
+* copy failed when job name contains space (thx @rubenjgarcia)
+  * https://github.com/sue445/jenkins-backup-script/pull/4
 
 ## 0.0.3
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.2...0.0.3)
