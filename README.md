@@ -28,7 +28,7 @@ git@github.com:sue445/jenkins-backup-script.git
 ```
 
 * **Recommended** : specify Branch Specifier with latest release tag
-* latest tag is `0.0.4`
+* latest tag is `0.0.5`
 
 ![0.0.3](http://f.st-hatena.com/images/fotolife/s/sue445/20140331/20140331010645.png)
 
@@ -53,7 +53,10 @@ ex.
 
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.4...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.5...master)
+
+## 0.0.5
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.4...0.0.5)
 
 * backup `$JENKINS_HOME/users`
   * https://github.com/sue445/jenkins-backup-script/pull/7
