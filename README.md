@@ -55,6 +55,9 @@ ex.
 ## master
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.4...master)
 
+* backup `$JENKINS_HOME/users`
+  * https://github.com/sue445/jenkins-backup-script/pull/7
+
 ## 0.0.4
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.3...0.0.4)
 
