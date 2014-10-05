@@ -25,9 +25,11 @@ fi
 rm -rf $ARC_DIR
 mkdir -p $ARC_DIR/plugins
 mkdir -p $ARC_DIR/jobs
+mkdir -p $ARC_DIR/users
 
 cp $JENKINS_HOME/*.xml $ARC_DIR
 cp $JENKINS_HOME/plugins/*.jpi $ARC_DIR/plugins
+cp -R $JENKINS_HOME/users/* $ARC_DIR/users
 
 cd $JENKINS_HOME/jobs/
 ls -1 | while read job_name
