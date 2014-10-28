@@ -25,7 +25,7 @@ https://wiki.jenkins-ci.org/display/JENKINS/Exclusive+Execution+Plugin
 ## 3. Configure
 ### Source Code Management > Repository URL
 ```
-git@github.com:sue445/jenkins-backup-script.git
+https://github.com/sue445/jenkins-backup-script.git
 ```
 
 * **Recommended** : specify Branch Specifier with latest release tag
