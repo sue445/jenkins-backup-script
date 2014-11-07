@@ -2,7 +2,7 @@
 
 ##################################################################################
 function usage(){
-  echo "usage: ./jenkins-backup.sh /path/to/jenkins_home archive.tar.gz"
+  echo "usage: $(basename $0) /path/to/jenkins_home archive.tar.gz"
 }
 ##################################################################################
 
@@ -15,7 +15,7 @@ readonly ARC_DIR="$TMP_DIR/$ARC_NAME"
 readonly TMP_TAR_NAME="archive.tar.gz"
 
 if [ -z "$JENKINS_HOME" -o -z "$DIST_FILE" ] ; then
-  usage
+  usage >&2
   exit 1
 fi
 
@@ -23,9 +23,7 @@ if [[ -f "$TMP_DIR/$TMP_TAR_NAME" ]]; then
     rm $TMP_DIR/$TMP_TAR_NAME
 fi
 rm -rf $ARC_DIR
-mkdir -p $ARC_DIR/plugins
-mkdir -p $ARC_DIR/jobs
-mkdir -p $ARC_DIR/users
+mkdir -p $ARC_DIR/{plugins,jobs,users}
 
 cp $JENKINS_HOME/*.xml $ARC_DIR
 cp $JENKINS_HOME/plugins/*.jpi $ARC_DIR/plugins
@@ -41,5 +39,3 @@ done
 cd $TMP_DIR
 tar czvf $TMP_TAR_NAME $ARC_NAME/*
 cp $TMP_DIR/$TMP_TAR_NAME $DIST_FILE
-
-exit 0
