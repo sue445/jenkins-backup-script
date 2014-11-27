@@ -20,22 +20,25 @@ if [ -z "$JENKINS_HOME" -o -z "$DIST_FILE" ] ; then
 fi
 
 if [[ -f "$TMP_DIR/$TMP_TAR_NAME" ]]; then
-    rm $TMP_DIR/$TMP_TAR_NAME
+    rm "$TMP_DIR/$TMP_TAR_NAME"
 fi
-rm -rf $ARC_DIR
-mkdir -p $ARC_DIR/{plugins,jobs,users}
+rm -rf "$ARC_DIR"
+mkdir -p "$ARC_DIR/"{plugins,jobs,users}
 
-cp $JENKINS_HOME/*.xml $ARC_DIR
-cp $JENKINS_HOME/plugins/*.jpi $ARC_DIR/plugins
-cp -R $JENKINS_HOME/users/* $ARC_DIR/users
+cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
+cp "$JENKINS_HOME/plugins/"*.jpi "$ARC_DIR/plugins"
+cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
 
-cd $JENKINS_HOME/jobs/
+cd "$JENKINS_HOME/jobs/"
 ls -1 | while read job_name
 do
-  mkdir -p $ARC_DIR/jobs/"$job_name"/
-  cp $JENKINS_HOME/jobs/"$job_name"/*.xml $ARC_DIR/jobs/"$job_name"/
+  echo $job_name
+  mkdir -p "$ARC_DIR/jobs/$job_name/"
+  cp "$JENKINS_HOME/jobs/$job_name/"*.xml "$ARC_DIR/jobs/$job_name/"
 done
 
-cd $TMP_DIR
-tar czvf $TMP_TAR_NAME $ARC_NAME/*
-cp $TMP_DIR/$TMP_TAR_NAME $DIST_FILE
+cd "$CUR_DIR"
+tar -czvf "$TMP_DIR/$TMP_TAR_NAME" "$TMP_DIR/$ARC_NAME/"*
+cp "$TMP_DIR/$TMP_TAR_NAME" "$DIST_FILE"
+
+exit 0
