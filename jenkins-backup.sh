@@ -32,7 +32,6 @@ cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
 cd "$JENKINS_HOME/jobs/"
 ls -1 | while read job_name
 do
-  echo $job_name
   mkdir -p "$ARC_DIR/jobs/$job_name/"
   cp "$JENKINS_HOME/jobs/$job_name/"*.xml "$ARC_DIR/jobs/$job_name/"
 done
