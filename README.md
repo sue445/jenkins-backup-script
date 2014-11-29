@@ -54,7 +54,15 @@ ex.
 
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.5...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.6...master)
+
+## 0.0.6
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.5...0.0.6)
+
+* Minor shell cleanups
+  * https://github.com/sue445/jenkins-backup-script/pull/9
+* Escape bug fix and few tweaks
+  * https://github.com/sue445/jenkins-backup-script/pull/11
 
 ## 0.0.5
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.4...0.0.5)
