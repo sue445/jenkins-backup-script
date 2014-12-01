@@ -1,5 +1,7 @@
 # Jenkins backup script
 
+[![Circle CI](https://circleci.com/gh/sue445/jenkins-backup-script/tree/master.svg?style=svg)](https://circleci.com/gh/sue445/jenkins-backup-script/tree/master)
+
 Archive Jenkins settings and plugins
 
 * $JENKINS_HOME/*.xml
@@ -51,6 +53,14 @@ ex.
 # Operability confirmed
 * Debian lenny
 * CentOS 6
+
+# UnitTest
+install ruby 2.1+
+
+```bash
+bundle install
+bundle exec rake test
+```
 
 # Changelog
 ## master
