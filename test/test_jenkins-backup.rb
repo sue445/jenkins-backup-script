@@ -3,7 +3,7 @@ require 'test/unit/around'
 require 'tmpdir'
 
 class TestJenkinsBackup < Test::Unit::TestCase
-  TEST_DIR     = File.dirname(__FILE__)
+  TEST_DIR     = __dir__
   SCRIPT_FILE  = "./jenkins-backup.sh"
   JENKINS_HOME = File.join(TEST_DIR, "jenkins_home")
 
