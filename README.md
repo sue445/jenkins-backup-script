@@ -46,7 +46,7 @@ https://github.com/sue445/jenkins-backup-script.git
 
 ex.
 
-```
+```bash
 ./jenkins-backup.sh $JENKINS_HOME /path/to/backup_`date +"%Y%m%d%H%M%S"`.tar.gz
 ```
 
@@ -60,6 +60,13 @@ install ruby 2.1+
 ```bash
 bundle install
 bundle exec rake test
+```
+
+# Tips
+## rotate backup files
+```bash
+# keep backup with latest 30 days
+find /path/to/backup_* -mtime +30 | xargs rm -f
 ```
 
 # Changelog
