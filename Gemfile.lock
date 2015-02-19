@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     power_assert (0.2.2)
+    rake (10.4.2)
     test-unit (3.0.7)
       power_assert
     test-unit-around (0.0.2)
@@ -11,5 +12,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rake
   test-unit
   test-unit-around

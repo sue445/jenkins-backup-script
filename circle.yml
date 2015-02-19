@@ -1,9 +1,0 @@
-# https://circleci.com/docs/config-sample
-machine:
-  ruby:
-    version: 2.1.5
-
-## Customize test commands
-test:
-  override:
-    - bundle exec rake test

@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+- 2.2
+script:
+- bundle exec rake test
+branches:
+  only:
+  - master
+notifications:
+  email: false
+  slack:
+    secure: E+oMk3qTxZNtlUb5V3yCjxg2f4Wd8jBFMfw9WDE5R9Qhyi8vKshxzFmjbe6em04qEmsZJxea0/GQ9OYvSsUud16H+LvuUDTNOltGBv6VTw/FT9LTEBNX3GERs0Qhzzr8ixmgPHIyUVR8VN0MPWYPUgVA9F8txyjW0I38u9EiJNk=
