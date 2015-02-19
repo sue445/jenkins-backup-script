@@ -26,7 +26,10 @@ rm -rf "$ARC_DIR"
 mkdir -p "$ARC_DIR/"{plugins,jobs,users}
 
 cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
-cp "$JENKINS_HOME/plugins/"*.jpi "$ARC_DIR/plugins"
+cp "$JENKINS_HOME/plugins/"*.[hj]pi "$ARC_DIR/plugins"
+if [ -f "$JENKINS_HOME/plugins/"*.[hj]pi.pinned ] ; then
+  cp "$JENKINS_HOME/plugins/"*.[hj]pi.pinned "$ARC_DIR/plugins"
+fi
 cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
 
 cd "$JENKINS_HOME/jobs/"
@@ -36,8 +39,10 @@ do
   cp "$JENKINS_HOME/jobs/$job_name/"*.xml "$ARC_DIR/jobs/$job_name/"
 done
 
+cd "$TMP_DIR"
+tar -czvf "$TMP_DIR/$TMP_TAR_NAME" "$ARC_NAME/"*
+
 cd "$CUR_DIR"
-tar -czvf "$TMP_DIR/$TMP_TAR_NAME" "$TMP_DIR/$ARC_NAME/"*
 cp "$TMP_DIR/$TMP_TAR_NAME" "$DIST_FILE"
 
 exit 0
