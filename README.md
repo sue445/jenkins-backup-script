@@ -73,12 +73,15 @@ find /path/to/backup_* -mtime +30 | xargs rm -f
 ## master
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.6...master)
 
+* Get all plugins, cleaner tar file (thx @maafy6)
+  * https://github.com/sue445/jenkins-backup-script/pull/14
+
 ## 0.0.6
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.5...0.0.6)
 
-* Minor shell cleanups
+* Minor shell cleanups (thx @SEJeff)
   * https://github.com/sue445/jenkins-backup-script/pull/9
-* Escape bug fix and few tweaks
+* Escape bug fix and few tweaks (thx @JackLeo)
   * https://github.com/sue445/jenkins-backup-script/pull/11
 
 ## 0.0.5
