@@ -26,7 +26,8 @@ rm -rf "$ARC_DIR"
 mkdir -p "$ARC_DIR/"{plugins,jobs,users}
 
 cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
-cp "$JENKINS_HOME/plugins/"*.jpi "$ARC_DIR/plugins"
+cp "$JENKINS_HOME/plugins/"*.[hj]pi "$ARC_DIR/plugins"
+cp "$JENKINS_HOME/plugins/"*.[hj]pi.pinned "$ARC_DIR/plugins"
 cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
 
 cd "$JENKINS_HOME/jobs/"
