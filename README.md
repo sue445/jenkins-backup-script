@@ -1,5 +1,6 @@
 # Jenkins backup script
 
+[![Build Status](https://travis-ci.org/sue445/jenkins-backup-script.svg?branch=master)](https://travis-ci.org/sue445/jenkins-backup-script)
 [![Circle CI](https://circleci.com/gh/sue445/jenkins-backup-script/tree/master.svg?style=svg)](https://circleci.com/gh/sue445/jenkins-backup-script/tree/master)
 
 Archive Jenkins settings and plugins
