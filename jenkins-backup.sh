@@ -37,8 +37,10 @@ do
   cp "$JENKINS_HOME/jobs/$job_name/"*.xml "$ARC_DIR/jobs/$job_name/"
 done
 
+cd "$TMP_DIR"
+tar -czvf "$TMP_DIR/$TMP_TAR_NAME" "$ARC_NAME/"*
+
 cd "$CUR_DIR"
-tar -czvf "$TMP_DIR/$TMP_TAR_NAME" "$TMP_DIR/$ARC_NAME/"*
 cp "$TMP_DIR/$TMP_TAR_NAME" "$DIST_FILE"
 
 exit 0
