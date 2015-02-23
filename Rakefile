@@ -8,3 +8,16 @@ Rake::TestTask.new do |t|
   t.test_files = Dir["test/**/test_*.rb"]
   t.verbose = true
 end
+
+def system!(command)
+  result = system(command)
+  raise "FAILED: #{command}" unless result
+end
+
+desc "release"
+task :release do
+  new_version = `cat VERSION`.strip
+  system! "git tag -a #{new_version} -m 'release #{new_version}'"
+  system! "git push origin master"
+  system! "git push origin --tags"
+end
