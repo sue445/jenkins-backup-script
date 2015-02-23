@@ -31,7 +31,7 @@ https://github.com/sue445/jenkins-backup-script.git
 ```
 
 * **Recommended** : specify Branch Specifier with latest release tag
-* latest tag is `0.0.6`
+* latest tag is `0.0.7`
 
 ![0.0.3](http://f.st-hatena.com/images/fotolife/s/sue445/20140331/20140331010645.png)
 
@@ -71,7 +71,10 @@ find /path/to/backup_* -mtime +30 | xargs rm -f
 
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.6...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.7...master)
+
+## 0.0.7
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.6...0.0.7)
 
 * Get all plugins, cleaner tar file (thx @maafy6)
   * https://github.com/sue445/jenkins-backup-script/pull/14
