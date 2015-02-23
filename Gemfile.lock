@@ -3,7 +3,7 @@ GEM
   specs:
     power_assert (0.2.2)
     rake (10.4.2)
-    test-unit (3.0.7)
+    test-unit (3.0.9)
       power_assert
     test-unit-around (0.0.2)
       test-unit (>= 2.4.4)
