@@ -27,7 +27,7 @@ mkdir -p "$ARC_DIR/"{plugins,jobs,users}
 
 cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
 cp "$JENKINS_HOME/plugins/"*.[hj]pi "$ARC_DIR/plugins"
-if [ -f "$JENKINS_HOME/plugins/"*.[hj]pi.pinned ] ; then
+if [ -f "$JENKINS_HOME/plugins/"*.hpi.pinned -o -f "$JENKINS_HOME/plugins/"*.jpi.pinned ] ; then
   cp "$JENKINS_HOME/plugins/"*.[hj]pi.pinned "$ARC_DIR/plugins"
 fi
 cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
