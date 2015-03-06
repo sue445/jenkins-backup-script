@@ -27,7 +27,7 @@ mkdir -p "$ARC_DIR/"{plugins,jobs,users}
 
 cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
 cp "$JENKINS_HOME/plugins/"*.[hj]pi "$ARC_DIR/plugins"
-hpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.jhi.pinned | wc -l)
+hpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.hpi.pinned | wc -l)
 jpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.jpi.pinned | wc -l)
 if [ $hpi_pinned_count -ne 0 -o $jpi_pinned_count -ne 0 ]; then
   cp "$JENKINS_HOME/plugins/"*.[hj]pi.pinned "$ARC_DIR/plugins"
