@@ -27,7 +27,9 @@ mkdir -p "$ARC_DIR/"{plugins,jobs,users}
 
 cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
 cp "$JENKINS_HOME/plugins/"*.[hj]pi "$ARC_DIR/plugins"
-if [ -f "$JENKINS_HOME/plugins/"*.hpi.pinned -o -f "$JENKINS_HOME/plugins/"*.jpi.pinned ] ; then
+hpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.hpi.pinned | wc -l)
+jpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.jpi.pinned | wc -l)
+if [ $hpi_pinned_count -ne 0 -o $jpi_pinned_count -ne 0 ]; then
   cp "$JENKINS_HOME/plugins/"*.[hj]pi.pinned "$ARC_DIR/plugins"
 fi
 cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
@@ -36,7 +38,7 @@ cd "$JENKINS_HOME/jobs/"
 ls -1 | while read job_name
 do
   mkdir -p "$ARC_DIR/jobs/$job_name/"
-  cp "$JENKINS_HOME/jobs/$job_name/"*.xml "$ARC_DIR/jobs/$job_name/"
+  find "$JENKINS_HOME/jobs/$job_name/" -maxdepth 1 -name *.xml | xargs -i cp {} "$ARC_DIR/jobs/$job_name/"
 done
 
 cd "$TMP_DIR"
