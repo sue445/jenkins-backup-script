@@ -1,6 +1,12 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.7...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.8...master)
+
+## 0.0.8
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.7...0.0.8)
+
+* Fix. too many arguments, cp failed source file does not exist
+  * https://github.com/sue445/jenkins-backup-script/pull/18
 
 ## 0.0.7
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.6...0.0.7)
