@@ -38,7 +38,7 @@ cd "$JENKINS_HOME/jobs/"
 ls -1 | while read job_name
 do
   mkdir -p "$ARC_DIR/jobs/$job_name/"
-  find "$JENKINS_HOME/jobs/$job_name/" -maxdepth 1 -name *.xml | xargs -i cp {} "$ARC_DIR/jobs/$job_name/"
+  find "$JENKINS_HOME/jobs/$job_name/" -maxdepth 1 -name "*.xml" | xargs -I {} cp {} "$ARC_DIR/jobs/$job_name/"
 done
 
 cd "$TMP_DIR"
