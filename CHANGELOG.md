@@ -1,6 +1,12 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.8...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.9...master)
+
+## 0.0.9
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.8...0.0.9)
+
+* mod xargs placeholder (thx @kuronekomichaelg)
+  * https://github.com/sue445/jenkins-backup-script/pull/20
 
 ## 0.0.8
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.7...0.0.8)
