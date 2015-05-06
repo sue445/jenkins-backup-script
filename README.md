@@ -31,7 +31,7 @@ https://github.com/sue445/jenkins-backup-script.git
 ```
 
 * **Recommended** : specify Branch Specifier with latest release tag
-* latest tag is `0.0.8`
+* latest tag is `0.0.9`
 
 ![0.0.3](http://f.st-hatena.com/images/fotolife/s/sue445/20140331/20140331010645.png)
 
