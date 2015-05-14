@@ -7,14 +7,14 @@ function usage(){
 ##################################################################################
 
 readonly JENKINS_HOME=$1
-readonly DIST_FILE=$2
+readonly DEST_FILE=$2
 readonly CUR_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 readonly TMP_DIR="$CUR_DIR/tmp"
 readonly ARC_NAME="jenkins-backup"
 readonly ARC_DIR="$TMP_DIR/$ARC_NAME"
 readonly TMP_TAR_NAME="archive.tar.gz"
 
-if [ -z "$JENKINS_HOME" -o -z "$DIST_FILE" ] ; then
+if [ -z "$JENKINS_HOME" -o -z "$DEST_FILE" ] ; then
   usage >&2
   exit 1
 fi
@@ -45,6 +45,6 @@ cd "$TMP_DIR"
 tar -czvf "$TMP_DIR/$TMP_TAR_NAME" "$ARC_NAME/"*
 
 cd "$CUR_DIR"
-cp "$TMP_DIR/$TMP_TAR_NAME" "$DIST_FILE"
+cp "$TMP_DIR/$TMP_TAR_NAME" "$DEST_FILE"
 
 exit 0
