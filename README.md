@@ -69,5 +69,17 @@ bundle exec rake test
 find /path/to/backup_* -mtime +30 | xargs rm -f
 ```
 
+## Restore commands
+example
+
+```bash
+sudo /etc/init.d/jenkins stop
+cd /path/to/backup_dir
+tar xzvf backup.tar.gz
+sudo cp -R jenkins-backup/* /path/to/jenkins/
+sudo chown jenkins:jenkins -R /path/to/jenkins/
+sudo /etc/init.d/jenkins start
+```
+
 # Changelog
 [CHANGELOG.md](CHANGELOG.md)
