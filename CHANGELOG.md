@@ -1,6 +1,9 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.9...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.0...master)
+
+## 0.1.0
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.9...0.1.0)
 
 * Support `$JENKINS_HOME/secrets` dir
   * https://github.com/sue445/jenkins-backup-script/pull/25
