@@ -49,6 +49,8 @@ class TestJenkinsBackup < Test::Unit::TestCase
         jenkins-backup/plugins/
         jenkins-backup/plugins/dummy.hpi
         jenkins-backup/plugins/dummy.jpi
+        jenkins-backup/secrets/
+        jenkins-backup/secrets/master.key
         jenkins-backup/users/
         jenkins-backup/users/sue445/
         jenkins-backup/users/sue445/config.xml
@@ -88,6 +90,8 @@ class TestJenkinsBackup < Test::Unit::TestCase
         jenkins-backup/plugins/dummy.hpi.pinned
         jenkins-backup/plugins/dummy.jpi
         jenkins-backup/plugins/dummy.jpi.pinned
+        jenkins-backup/secrets/
+        jenkins-backup/secrets/master.key
         jenkins-backup/users/
         jenkins-backup/users/sue445/
         jenkins-backup/users/sue445/config.xml

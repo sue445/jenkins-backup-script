@@ -23,7 +23,7 @@ if [[ -f "$TMP_DIR/$TMP_TAR_NAME" ]]; then
     rm "$TMP_DIR/$TMP_TAR_NAME"
 fi
 rm -rf "$ARC_DIR"
-mkdir -p "$ARC_DIR/"{plugins,jobs,users}
+mkdir -p "$ARC_DIR/"{plugins,jobs,users,secrets}
 
 cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
 cp "$JENKINS_HOME/plugins/"*.[hj]pi "$ARC_DIR/plugins"
@@ -33,6 +33,7 @@ if [ $hpi_pinned_count -ne 0 -o $jpi_pinned_count -ne 0 ]; then
   cp "$JENKINS_HOME/plugins/"*.[hj]pi.pinned "$ARC_DIR/plugins"
 fi
 cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
+cp -R "$JENKINS_HOME/secrets/"* "$ARC_DIR/secrets"
 
 cd "$JENKINS_HOME/jobs/"
 ls -1 | while read job_name
