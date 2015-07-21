@@ -35,7 +35,7 @@ if [ -d "$JENKINS_HOME/users/" ] ; then
   cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
 fi
 
-if [ -d "$JENKINS_HOME/secrets/"] ; then
+if [ -d "$JENKINS_HOME/secrets/" ] ; then
   cp -R "$JENKINS_HOME/secrets/"* "$ARC_DIR/secrets"
 fi
 
