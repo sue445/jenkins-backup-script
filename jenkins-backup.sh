@@ -12,14 +12,14 @@ readonly CUR_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 readonly TMP_DIR="$CUR_DIR/tmp"
 readonly ARC_NAME="jenkins-backup"
 readonly ARC_DIR="$TMP_DIR/$ARC_NAME"
-readonly TMP_TAR_NAME="archive.tar.gz"
+readonly TMP_TAR_NAME="$TMP_DIR/archive.tar.gz"
 
 if [ -z "$JENKINS_HOME" -o -z "$DEST_FILE" ] ; then
   usage >&2
   exit 1
 fi
 
-rm -rf "$ARC_DIR" "$TMP_DIR/$TMP_TAR_NAME"
+rm -rf "$ARC_DIR" "$TMP_TAR_NAME"
 mkdir -p "$ARC_DIR/"{plugins,jobs,users,secrets}
 
 cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
@@ -48,8 +48,8 @@ if [ -d "$JENKINS_HOME/jobs/" ] ; then
 fi
 
 cd "$TMP_DIR"
-tar -czvf "$TMP_DIR/$TMP_TAR_NAME" "$ARC_NAME/"*
-mv -f "$TMP_DIR/$TMP_TAR_NAME" "$DEST_FILE"
+tar -czvf "$TMP_TAR_NAME" "$ARC_NAME/"*
+mv -f "$TMP_TAR_NAME" "$DEST_FILE"
 rm -rf "$ARC_DIR"
 
 exit 0
