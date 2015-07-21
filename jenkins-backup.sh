@@ -19,13 +19,11 @@ if [ -z "$JENKINS_HOME" -o -z "$DEST_FILE" ] ; then
   exit 1
 fi
 
-if [[ -f "$TMP_DIR/$TMP_TAR_NAME" ]]; then
-    rm "$TMP_DIR/$TMP_TAR_NAME"
-fi
-rm -rf "$ARC_DIR"
+rm -rf "$ARC_DIR" "$TMP_DIR/$TMP_TAR_NAME"
 mkdir -p "$ARC_DIR/"{plugins,jobs,users,secrets}
 
 cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
+
 cp "$JENKINS_HOME/plugins/"*.[hj]pi "$ARC_DIR/plugins"
 hpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.hpi.pinned | wc -l)
 jpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.jpi.pinned | wc -l)
@@ -49,8 +47,9 @@ if [ -d "$JENKINS_HOME/jobs/" ] ; then
   done
 fi
 
+cd "$TMP_DIR"
 tar -czvf "$TMP_DIR/$TMP_TAR_NAME" "$ARC_NAME/"*
-
-cp "$TMP_DIR/$TMP_TAR_NAME" "$DEST_FILE"
+mv -f "$TMP_DIR/$TMP_TAR_NAME" "$DEST_FILE"
+rm -rf "$ARC_DIR"
 
 exit 0
