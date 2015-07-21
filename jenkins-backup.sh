@@ -32,20 +32,25 @@ jpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.jpi.pinned | wc -l)
 if [ $hpi_pinned_count -ne 0 -o $jpi_pinned_count -ne 0 ]; then
   cp "$JENKINS_HOME/plugins/"*.[hj]pi.pinned "$ARC_DIR/plugins"
 fi
-cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
-cp -R "$JENKINS_HOME/secrets/"* "$ARC_DIR/secrets"
 
-cd "$JENKINS_HOME/jobs/"
-ls -1 | while read job_name
-do
-  mkdir -p "$ARC_DIR/jobs/$job_name/"
-  find "$JENKINS_HOME/jobs/$job_name/" -maxdepth 1 -name "*.xml" | xargs -I {} cp {} "$ARC_DIR/jobs/$job_name/"
-done
+if [ -d "$JENKINS_HOME/users/" ] ; then
+  cp -R "$JENKINS_HOME/users/"* "$ARC_DIR/users"
+fi
 
-cd "$TMP_DIR"
+if [ -d "$JENKINS_HOME/secrets/"] ; then
+  cp -R "$JENKINS_HOME/secrets/"* "$ARC_DIR/secrets"
+fi
+
+if [ -d "$JENKINS_HOME/jobs/" ] ; then
+  cd "$JENKINS_HOME/jobs/"
+  ls -1 | while read job_name ; do
+    mkdir -p "$ARC_DIR/jobs/$job_name/"
+    find "$JENKINS_HOME/jobs/$job_name/" -maxdepth 1 -name "*.xml" | xargs -I {} cp {} "$ARC_DIR/jobs/$job_name/"
+  done
+fi
+
 tar -czvf "$TMP_DIR/$TMP_TAR_NAME" "$ARC_NAME/"*
 
-cd "$CUR_DIR"
 cp "$TMP_DIR/$TMP_TAR_NAME" "$DEST_FILE"
 
 exit 0
