@@ -66,7 +66,7 @@ bundle exec rake test
 ## rotate backup files
 ```bash
 # keep backup with latest 30 days
-find /path/to/backup_* -mtime +30 | xargs rm -f
+find /path/to/backup_* -mtime +30 -delete
 ```
 
 ## Restore commands
