@@ -1,6 +1,12 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.0...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.1...master)
+
+## 0.1.1
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.0...0.1.1)
+
+* fix jenkins backup if some directories don't exist
+  * https://github.com/sue445/jenkins-backup-script/pull/27
 
 ## 0.1.0
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.0.9...0.1.0)
