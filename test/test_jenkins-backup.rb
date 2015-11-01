@@ -26,7 +26,7 @@ class TestJenkinsBackup < Test::Unit::TestCase
 
   sub_test_case "When not exists pinned files" do
     setup do
-      # jenkins_home1 dir contain dummy.hpi.pinned and dummy.jpi.pinned
+      # jenkins_home1 dir does not contain dummy.hpi.pinned and dummy.jpi.pinned
       @jenkins_home = File.join(TEST_DIR, "jenkins_home1")
     end
 
