@@ -2,6 +2,13 @@
 ## master
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.1...master)
 
+## 0.1.2
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.1...0.1.2)
+
+* support relative path for `DEST_FILE` (thx @namikawa)
+  * https://github.com/sue445/jenkins-backup-script/pull/31
+  * https://github.com/sue445/jenkins-backup-script/pull/32
+
 ## 0.1.1
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.0...0.1.1)
 
