@@ -45,10 +45,12 @@ if [ -d "$JENKINS_HOME/jobs/" ] ; then
     mkdir -p "$ARC_DIR/jobs/$job_name/"
     find "$JENKINS_HOME/jobs/$job_name/" -maxdepth 1 -name "*.xml" | xargs -I {} cp {} "$ARC_DIR/jobs/$job_name/"
   done
+  cd -
 fi
 
 cd "$TMP_DIR"
 tar -czvf "$TMP_TAR_NAME" "$ARC_NAME/"*
+cd -
 mv -f "$TMP_TAR_NAME" "$DEST_FILE"
 rm -rf "$ARC_DIR"
 
