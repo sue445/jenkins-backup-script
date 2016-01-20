@@ -12,11 +12,11 @@ class TestJenkinsBackup < Test::Unit::TestCase
   end
 
   def use_absolute_dist_file
-    @dist_file = "#{@temp_dir}/archive.tar.gz"
+    @dest_file = "#{@temp_dir}/archive.tar.gz"
   end
 
   def use_relative_dist_file
-    @dist_file = "archive.tar.gz"
+    @dest_file = "archive.tar.gz"
   end
 
   def use_jenkins_home_without_pinned
@@ -49,13 +49,13 @@ class TestJenkinsBackup < Test::Unit::TestCase
         use_jenkins_home_without_pinned
 
         assert "jenkins-backup.sh should be success" do
-          system("#{SCRIPT_FILE} #{@jenkins_home} #{@dist_file}") == true
+          system("#{SCRIPT_FILE} #{@jenkins_home} #{@dest_file}") == true
         end
 
-        assert { File.exists?(@dist_file) }
-        assert { File.size(@dist_file) > 0 }
+        assert { File.exists?(@dest_file) }
+        assert { File.size(@dest_file) > 0 }
 
-        actual_files = list_tar_file(@dist_file)
+        actual_files = list_tar_file(@dest_file)
         expected_files = %w(
           jenkins-backup/hudson.model.UpdateCenter.xml
           jenkins-backup/jobs/
@@ -84,13 +84,13 @@ class TestJenkinsBackup < Test::Unit::TestCase
         use_jenkins_home_with_pinned
 
         assert "jenkins-backup.sh should be success" do
-          system("#{SCRIPT_FILE} #{@jenkins_home} #{@dist_file}") == true
+          system("#{SCRIPT_FILE} #{@jenkins_home} #{@dest_file}") == true
         end
 
-        assert { File.exists?(@dist_file) }
-        assert { File.size(@dist_file) > 0 }
+        assert { File.exists?(@dest_file) }
+        assert { File.size(@dest_file) > 0 }
 
-        actual_files = list_tar_file(@dist_file)
+        actual_files = list_tar_file(@dest_file)
         expected_files = %w(
           jenkins-backup/hudson.model.UpdateCenter.xml
           jenkins-backup/jobs/
@@ -123,13 +123,13 @@ class TestJenkinsBackup < Test::Unit::TestCase
         use_jenkins_home_without_pinned
 
         assert "jenkins-backup.sh should be success" do
-          system("#{SCRIPT_FILE} #{@jenkins_home} #{@dist_file}") == true
+          system("#{SCRIPT_FILE} #{@jenkins_home} #{@dest_file}") == true
         end
 
-        assert { File.exists?(@dist_file) }
-        assert { File.size(@dist_file) > 0 }
+        assert { File.exists?(@dest_file) }
+        assert { File.size(@dest_file) > 0 }
 
-        actual_files = list_tar_file(@dist_file)
+        actual_files = list_tar_file(@dest_file)
         expected_files = %w(
           jenkins-backup/hudson.model.UpdateCenter.xml
           jenkins-backup/jobs/
@@ -158,13 +158,13 @@ class TestJenkinsBackup < Test::Unit::TestCase
         use_jenkins_home_with_pinned
 
         assert "jenkins-backup.sh should be success" do
-          system("#{SCRIPT_FILE} #{@jenkins_home} #{@dist_file}") == true
+          system("#{SCRIPT_FILE} #{@jenkins_home} #{@dest_file}") == true
         end
 
-        assert { File.exists?(@dist_file) }
-        assert { File.size(@dist_file) > 0 }
+        assert { File.exists?(@dest_file) }
+        assert { File.size(@dest_file) > 0 }
 
-        actual_files = list_tar_file(@dist_file)
+        actual_files = list_tar_file(@dest_file)
         expected_files = %w(
           jenkins-backup/hudson.model.UpdateCenter.xml
           jenkins-backup/jobs/
