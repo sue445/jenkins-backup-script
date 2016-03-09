@@ -22,7 +22,7 @@ fi
 rm -rf "$ARC_DIR" "$TMP_TAR_NAME"
 mkdir -p "$ARC_DIR/"{plugins,jobs,users,secrets}
 
-cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
+cp "$JENKINS_HOME/"*.xml "$ARC_DIR" || true
 
 cp "$JENKINS_HOME/plugins/"*.[hj]pi "$ARC_DIR/plugins"
 hpi_pinned_count=$(find $JENKINS_HOME/plugins/ -name *.hpi.pinned | wc -l)
@@ -40,7 +40,13 @@ if [ -d "$JENKINS_HOME/secrets/" ] ; then
 fi
 
 if [ -d "$JENKINS_HOME/jobs/" ] ; then
-  cd "$JENKINS_HOME/jobs/"
+  readonly JOB_DIR="$JENKINS_HOME/jobs/"
+elif [ -d "$JENKINS_HOME/workspace/" ]; then
+  readonly JOB_DIR="$JENKINS_HOME/workspace/"
+fi
+
+if [ -n $JOB_DIR ]; then
+  cd $JOB_DIR;
   ls -1 | while read job_name ; do
     mkdir -p "$ARC_DIR/jobs/$job_name/"
     find "$JENKINS_HOME/jobs/$job_name/" -maxdepth 1 -name "*.xml" | xargs -I {} cp {} "$ARC_DIR/jobs/$job_name/"
