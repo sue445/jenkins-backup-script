@@ -29,6 +29,48 @@ class TestJenkinsBackup < Test::Unit::TestCase
     @jenkins_home = File.join(TEST_DIR, "jenkins_home2")
   end
 
+  def expected_files_without_pinned
+    %w(
+      jenkins-backup/hudson.model.UpdateCenter.xml
+      jenkins-backup/jobs/
+      jenkins-backup/jobs/example_job/
+      jenkins-backup/jobs/example_job/config.xml
+      jenkins-backup/nodes/
+      jenkins-backup/nodes/slave/
+      jenkins-backup/nodes/slave/config.xml
+      jenkins-backup/plugins/
+      jenkins-backup/plugins/dummy.hpi
+      jenkins-backup/plugins/dummy.jpi
+      jenkins-backup/secrets/
+      jenkins-backup/secrets/master.key
+      jenkins-backup/users/
+      jenkins-backup/users/sue445/
+      jenkins-backup/users/sue445/config.xml
+    )
+  end
+
+  def expected_files_with_pinned
+    %w(
+      jenkins-backup/hudson.model.UpdateCenter.xml
+      jenkins-backup/jobs/
+      jenkins-backup/jobs/example_job/
+      jenkins-backup/jobs/example_job/config.xml
+      jenkins-backup/nodes/
+      jenkins-backup/nodes/slave/
+      jenkins-backup/nodes/slave/config.xml
+      jenkins-backup/plugins/
+      jenkins-backup/plugins/dummy.hpi
+      jenkins-backup/plugins/dummy.hpi.pinned
+      jenkins-backup/plugins/dummy.jpi
+      jenkins-backup/plugins/dummy.jpi.pinned
+      jenkins-backup/secrets/
+      jenkins-backup/secrets/master.key
+      jenkins-backup/users/
+      jenkins-backup/users/sue445/
+      jenkins-backup/users/sue445/config.xml
+    )
+  end
+
   around do |test|
     Dir.mktmpdir("test-") do |temp_dir|
       @temp_dir = temp_dir
@@ -56,24 +98,7 @@ class TestJenkinsBackup < Test::Unit::TestCase
         assert { File.size(@dest_file) > 0 }
 
         actual_files = list_tar_file(@dest_file)
-        expected_files = %w(
-          jenkins-backup/hudson.model.UpdateCenter.xml
-          jenkins-backup/jobs/
-          jenkins-backup/jobs/example_job/
-          jenkins-backup/jobs/example_job/config.xml
-          jenkins-backup/nodes/
-          jenkins-backup/nodes/slave/
-          jenkins-backup/nodes/slave/config.xml
-          jenkins-backup/plugins/
-          jenkins-backup/plugins/dummy.hpi
-          jenkins-backup/plugins/dummy.jpi
-          jenkins-backup/secrets/
-          jenkins-backup/secrets/master.key
-          jenkins-backup/users/
-          jenkins-backup/users/sue445/
-          jenkins-backup/users/sue445/config.xml
-        )
-        expected_files.each do |file|
+        expected_files_without_pinned.each do |file|
           assert("archive file should include #{file}") do
             actual_files.include?(file)
           end
@@ -94,26 +119,7 @@ class TestJenkinsBackup < Test::Unit::TestCase
         assert { File.size(@dest_file) > 0 }
 
         actual_files = list_tar_file(@dest_file)
-        expected_files = %w(
-          jenkins-backup/hudson.model.UpdateCenter.xml
-          jenkins-backup/jobs/
-          jenkins-backup/jobs/example_job/
-          jenkins-backup/jobs/example_job/config.xml
-          jenkins-backup/nodes/
-          jenkins-backup/nodes/slave/
-          jenkins-backup/nodes/slave/config.xml
-          jenkins-backup/plugins/
-          jenkins-backup/plugins/dummy.hpi
-          jenkins-backup/plugins/dummy.hpi.pinned
-          jenkins-backup/plugins/dummy.jpi
-          jenkins-backup/plugins/dummy.jpi.pinned
-          jenkins-backup/secrets/
-          jenkins-backup/secrets/master.key
-          jenkins-backup/users/
-          jenkins-backup/users/sue445/
-          jenkins-backup/users/sue445/config.xml
-        )
-        expected_files.each do |file|
+        expected_files_with_pinned.each do |file|
           assert("archive file should include #{file}") do
             actual_files.include?(file)
           end
@@ -136,24 +142,7 @@ class TestJenkinsBackup < Test::Unit::TestCase
         assert { File.size(@dest_file) > 0 }
 
         actual_files = list_tar_file(@dest_file)
-        expected_files = %w(
-          jenkins-backup/hudson.model.UpdateCenter.xml
-          jenkins-backup/jobs/
-          jenkins-backup/jobs/example_job/
-          jenkins-backup/jobs/example_job/config.xml
-          jenkins-backup/nodes/
-          jenkins-backup/nodes/slave/
-          jenkins-backup/nodes/slave/config.xml
-          jenkins-backup/plugins/
-          jenkins-backup/plugins/dummy.hpi
-          jenkins-backup/plugins/dummy.jpi
-          jenkins-backup/secrets/
-          jenkins-backup/secrets/master.key
-          jenkins-backup/users/
-          jenkins-backup/users/sue445/
-          jenkins-backup/users/sue445/config.xml
-        )
-        expected_files.each do |file|
+        expected_files_without_pinned.each do |file|
           assert("archive file should include #{file}") do
             actual_files.include?(file)
           end
@@ -174,26 +163,7 @@ class TestJenkinsBackup < Test::Unit::TestCase
         assert { File.size(@dest_file) > 0 }
 
         actual_files = list_tar_file(@dest_file)
-        expected_files = %w(
-          jenkins-backup/hudson.model.UpdateCenter.xml
-          jenkins-backup/jobs/
-          jenkins-backup/jobs/example_job/
-          jenkins-backup/jobs/example_job/config.xml
-          jenkins-backup/nodes/
-          jenkins-backup/nodes/slave/
-          jenkins-backup/nodes/slave/config.xml
-          jenkins-backup/plugins/
-          jenkins-backup/plugins/dummy.hpi
-          jenkins-backup/plugins/dummy.hpi.pinned
-          jenkins-backup/plugins/dummy.jpi
-          jenkins-backup/plugins/dummy.jpi.pinned
-          jenkins-backup/secrets/
-          jenkins-backup/secrets/master.key
-          jenkins-backup/users/
-          jenkins-backup/users/sue445/
-          jenkins-backup/users/sue445/config.xml
-        )
-        expected_files.each do |file|
+        expected_files_with_pinned.each do |file|
           assert("archive file should include #{file}") do
             actual_files.include?(file)
           end
