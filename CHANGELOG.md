@@ -1,6 +1,12 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.1...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.3...master)
+
+## 0.1.3
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.2...0.1.3)
+
+* added nodes to archive
+  * https://github.com/sue445/jenkins-backup-script/pull/34
 
 ## 0.1.2
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.1...0.1.2)

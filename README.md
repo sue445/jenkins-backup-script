@@ -5,8 +5,9 @@
 Archive Jenkins settings and plugins
 
 * `$JENKINS_HOME/*.xml`
-* `$JENKINS_HOME/plugins/*.jpi`
 * `$JENKINS_HOME/jobs/*/*.xml`
+* `$JENKINS_HOME/nodes/*`
+* `$JENKINS_HOME/plugins/*.jpi`
 * `$JENKINS_HOME/users/*`
 
 # Usage
