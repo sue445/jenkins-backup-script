@@ -9,15 +9,10 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-def system!(command)
-  result = system(command)
-  raise "FAILED: #{command}" unless result
-end
-
 desc "release"
 task :release do
   new_version = `cat VERSION`.strip
-  system! "git tag -a #{new_version} -m 'release #{new_version}'"
-  system! "git push origin master"
-  system! "git push origin --tags"
+  sh "git tag -a #{new_version} -m 'release #{new_version}'"
+  sh "git push origin master"
+  sh "git push origin --tags"
 end
