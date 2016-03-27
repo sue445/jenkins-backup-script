@@ -1,6 +1,13 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.3...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.4...master)
+
+## 0.1.4
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.3...0.1.4)
+
+* Fix error when nodes dir is empty
+  * https://github.com/sue445/jenkins-backup-script/issues/37
+  * https://github.com/sue445/jenkins-backup-script/pull/38
 
 ## 0.1.3
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.2...0.1.3)
