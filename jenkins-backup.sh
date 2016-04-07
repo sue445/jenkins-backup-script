@@ -43,13 +43,29 @@ if [ "$(ls -A $JENKINS_HOME/nodes/)" ] ; then
   cp -R "$JENKINS_HOME/nodes/"* "$ARC_DIR/nodes"
 fi
 
-if [ "$(ls -A $JENKINS_HOME/jobs/)" ] ; then
-  cd "$JENKINS_HOME/jobs/"
-  ls -1 | while read job_name ; do
-    mkdir -p "$ARC_DIR/jobs/$job_name/"
-    find "$JENKINS_HOME/jobs/$job_name/" -maxdepth 1 -name "*.xml" | xargs -I {} cp {} "$ARC_DIR/jobs/$job_name/"
+function backup_jobs {
+  local run_in_path=$1
+  local rel_depth=${run_in_path#$JENKINS_HOME/jobs/}
+  cd $run_in_path
+  find . -maxdepth 1 -type d | while read job_name ; do
+    [ "$job_name" = "." ] && continue
+    [ "$job_name" = ".." ] && continue
+    [ -d $JENKINS_HOME/jobs/$rel_depth/$job_name ] && mkdir -p "$ARC_DIR/jobs/$rel_depth/$job_name/"
+    find "$JENKINS_HOME/jobs/$rel_depth/$job_name/" -maxdepth 1 -name "*.xml" | xargs -I {} cp {} "$ARC_DIR/jobs/$rel_depth/$job_name/"
+    if [ -f $JENKINS_HOME/jobs/$rel_depth/$job_name/config.xml ] && [ "$(grep -c "com.cloudbees.hudson.plugins.folder.Folder" $JENKINS_HOME/jobs/$rel_depth/$job_name/config.xml)" -ge 1 ] ; then
+      #echo "Folder! $JENKINS_HOME/jobs/$rel_depth/$job_name/jobs"
+      backup_jobs $JENKINS_HOME/jobs/$rel_depth/$job_name/jobs
+    else
+      true
+      #echo "Job! $JENKINS_HOME/jobs/$rel_depth/$job_name"
+    fi 
   done
+  #echo "Done in $(pwd)"
   cd -
+}
+
+if [ "$(ls -A $JENKINS_HOME/jobs/)" ] ; then
+  backup_jobs $JENKINS_HOME/jobs/
 fi
 
 cd "$TMP_DIR"

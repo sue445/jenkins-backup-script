@@ -35,6 +35,10 @@ class TestJenkinsBackup < Test::Unit::TestCase
       jenkins-backup/jobs/
       jenkins-backup/jobs/example_job/
       jenkins-backup/jobs/example_job/config.xml
+      jenkins-backup/jobs/example_folder/
+      jenkins-backup/jobs/example_folder/config.xml
+      jenkins-backup/jobs/example_folder/jobs/example_job_in_folder/
+      jenkins-backup/jobs/example_folder/jobs/example_job_in_folder/config.xml
       jenkins-backup/nodes/
       jenkins-backup/nodes/slave/
       jenkins-backup/nodes/slave/config.xml
@@ -55,6 +59,10 @@ class TestJenkinsBackup < Test::Unit::TestCase
       jenkins-backup/jobs/
       jenkins-backup/jobs/example_job/
       jenkins-backup/jobs/example_job/config.xml
+      jenkins-backup/jobs/example_folder/
+      jenkins-backup/jobs/example_folder/config.xml
+      jenkins-backup/jobs/example_folder/jobs/example_job_in_folder/
+      jenkins-backup/jobs/example_folder/jobs/example_job_in_folder/config.xml
       jenkins-backup/nodes/
       jenkins-backup/nodes/slave/
       jenkins-backup/nodes/slave/config.xml
