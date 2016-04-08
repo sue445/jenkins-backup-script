@@ -1,6 +1,12 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.4...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.5...master)
+
+## 0.1.5
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.4...0.1.5)
+
+* Add support for CloudBees Folder plugin
+  * https://github.com/sue445/jenkins-backup-script/pull/39
 
 ## 0.1.4
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.3...0.1.4)
