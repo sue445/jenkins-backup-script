@@ -52,15 +52,19 @@ ex.
 ```
 
 # Operability confirmed
-* Debian lenny
-* CentOS 6
+* Debian jessie
+* CentOS 7.0
 
-# UnitTest
-install ruby 2.1+
+## Testing
+requirements [Vagrant](https://www.vagrantup.com/)
 
-```bash
+```sh
+gem install bundler -v 1.10.6
 bundle install
-bundle exec rake test
+
+vagrant up centos70
+bundle exec rake itamae:centos70
+bundle exec rake spec:centos70
 ```
 
 # Tips
