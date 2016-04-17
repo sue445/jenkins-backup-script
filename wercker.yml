@@ -1,0 +1,78 @@
+# This references the default Ruby container from
+# the Docker Hub.
+# https://registry.hub.docker.com/_/ruby/
+# If you want to use a specific version you would use a tag:
+# ruby:2.2.2
+box: sue445/rvm-vagrant-digitalocean@1.0.0
+# You can also use services such as databases. Read more on our dev center:
+# http://devcenter.wercker.com/docs/services/index.html
+# services:
+    # - postgres
+    # http://devcenter.wercker.com/docs/services/postgresql.html
+
+    # - mongodb
+    # http://devcenter.wercker.com/docs/services/mongodb.html
+
+# This is the build pipeline. Pipelines are the core of wercker
+# Read more about pipelines on our dev center
+# http://devcenter.wercker.com/docs/pipelines/index.html
+build:
+    # Steps make up the actions in your pipeline
+    # Read more about steps on our dev center:
+    # http://devcenter.wercker.com/docs/steps/index.html
+    steps:
+        - rvm-use:
+            version: 2.3.0
+
+        - script:
+            name: install bundler
+            code: gem install bundler -v 1.10.6 --no-document
+
+        - bundle-install:
+            jobs: 4
+
+        - script:
+            name: echo ruby information
+            code: |
+                echo "ruby version $(ruby --version) running"
+                echo "from location $(which ruby)"
+                echo -p "gem list: $(gem list)"
+
+        - script:
+            name: create .ssh directory
+            code: mkdir -m 700 -p $HOME/.ssh
+
+        - create-file:
+            name: put private key
+            filename: $HOME/.ssh/id_rsa.vagrant
+            overwrite: true
+            hide-from-log: true
+            content: $DIGITALOCEAN_KEY_PRIVATE
+
+        - create-file:
+            name: put public key
+            filename: $HOME/.ssh/id_rsa.vagrant.pub
+            overwrite: true
+            hide-from-log: true
+            content: $DIGITALOCEAN_KEY_PUBLIC
+
+        - script:
+            name: chmod 600 id_rsa
+            code: chmod 600 $HOME/.ssh/id_rsa.vagrant
+
+        - script:
+            name: test centos70
+            code: ./ci/build.sh centos70
+
+        - script:
+            name: test debian8
+            code: ./ci/build.sh debian8
+
+    after-steps:
+        - script:
+            name: destroy all vms
+            code: vagrant destroy -f
+
+        - wantedly/pretty-slack-notify:
+            webhook_url: $SLACK_WEBHOOK_URL
+            username: wercker_build

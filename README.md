@@ -1,6 +1,6 @@
 # Jenkins backup script
 
-[![Build Status](https://travis-ci.org/sue445/jenkins-backup-script.svg?branch=master)](https://travis-ci.org/sue445/jenkins-backup-script)
+[![wercker status](https://app.wercker.com/status/17ca82b64d66756a966db78695ad4c8f/m/master "wercker status")](https://app.wercker.com/project/bykey/17ca82b64d66756a966db78695ad4c8f)
 
 Archive Jenkins settings and plugins
 
@@ -52,15 +52,19 @@ ex.
 ```
 
 # Operability confirmed
-* Debian lenny
-* CentOS 6
+* Debian jessie
+* CentOS 7.0
 
-# UnitTest
-install ruby 2.1+
+## Testing
+requirements [Vagrant](https://www.vagrantup.com/)
 
-```bash
+```sh
+gem install bundler -v 1.10.6
 bundle install
-bundle exec rake test
+
+vagrant up centos70
+bundle exec rake itamae:centos70
+bundle exec rake spec:centos70
 ```
 
 # Tips
