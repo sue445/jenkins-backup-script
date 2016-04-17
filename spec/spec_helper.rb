@@ -44,6 +44,8 @@ set :ssh_options, options
 require "yaml"
 require "itamae/node"
 
+Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
+
 def node
   return @node if @node
 
