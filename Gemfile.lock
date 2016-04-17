@@ -1,17 +1,65 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ansi (1.5.0)
+    diff-lcs (1.2.5)
+    hashie (3.4.3)
+    itamae (1.9.6)
+      ansi
+      hashie
+      schash (~> 0.1.0)
+      specinfra (>= 2.37.0, < 3.0.0)
+      thor
+    multi_json (1.11.2)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (3.1.1)
+    net-telnet (0.1.1)
     power_assert (0.2.2)
     rake (10.4.2)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-its (1.2.0)
+      rspec-core (>= 3.0.0)
+      rspec-expectations (>= 3.0.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    schash (0.1.2)
+    serverspec (2.31.1)
+      multi_json
+      rspec (~> 3.0)
+      rspec-its
+      specinfra (~> 2.53)
+    sfl (2.2)
+    specinfra (2.56.1)
+      net-scp
+      net-ssh (>= 2.7, < 4.0)
+      net-telnet
+      sfl
     test-unit (3.0.9)
       power_assert
     test-unit-around (0.0.2)
       test-unit (>= 2.4.4)
+    thor (0.19.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  itamae
   rake
+  serverspec
   test-unit
   test-unit-around
+
+BUNDLED WITH
+   1.11.2

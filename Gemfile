@@ -5,3 +5,7 @@ group :test do
   gem "test-unit"
   gem "test-unit-around"
 end
+
+gem "itamae"
+gem "rake"
+gem "serverspec"
