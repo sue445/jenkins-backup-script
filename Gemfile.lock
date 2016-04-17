@@ -15,7 +15,6 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (3.1.1)
     net-telnet (0.1.1)
-    power_assert (0.2.2)
     rake (10.4.2)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -45,10 +44,6 @@ GEM
       net-ssh (>= 2.7, < 4.0)
       net-telnet
       sfl
-    test-unit (3.0.9)
-      power_assert
-    test-unit-around (0.0.2)
-      test-unit (>= 2.4.4)
     thor (0.19.1)
 
 PLATFORMS
@@ -59,8 +54,6 @@ DEPENDENCIES
   itamae
   rake
   serverspec
-  test-unit
-  test-unit-around
 
 BUNDLED WITH
    1.11.2
