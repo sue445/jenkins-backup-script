@@ -46,7 +46,7 @@ fi
 function backup_jobs {
   local run_in_path=$1
   local rel_depth=${run_in_path#$JENKINS_HOME/jobs/}
-  cd $run_in_path
+  cd "$run_in_path"
   find . -maxdepth 1 -type d | while read job_name ; do
     [ "$job_name" = "." ] && continue
     [ "$job_name" = ".." ] && continue
