@@ -1,6 +1,12 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.6...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.7...master)
+
+## 0.1.7
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.6...0.1.7)
+
+* Fix: Backup script was failing when projects have folders with spaces
+  * https://github.com/sue445/jenkins-backup-script/pull/44
 
 ## 0.1.6
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.5...0.1.6)
