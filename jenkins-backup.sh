@@ -20,7 +20,9 @@ if [ -z "$JENKINS_HOME" -o -z "$DEST_FILE" ] ; then
 fi
 
 rm -rf "$ARC_DIR" "$TMP_TAR_NAME"
-mkdir -p "$ARC_DIR/"{plugins,jobs,users,secrets,nodes}
+for i in plugins jobs users secrets nodes;do
+  mkdir -p "$ARC_DIR"/$i
+done
 
 cp "$JENKINS_HOME/"*.xml "$ARC_DIR"
 
