@@ -1,6 +1,12 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.7...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.8...master)
+
+## 0.1.8
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.7...0.1.8)
+
+* Fix making directories on Windows with busybox-w32
+  * https://github.com/sue445/jenkins-backup-script/pull/45
 
 ## 0.1.7
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.6...0.1.7)
