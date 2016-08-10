@@ -13,13 +13,26 @@ box: drecom/centos-ruby:2.3.1
     # - mongodb
     # http://devcenter.wercker.com/docs/services/mongodb.html
 
-# This is the build pipeline. Pipelines are the core of wercker
-# Read more about pipelines on our dev center
-# http://devcenter.wercker.com/docs/pipelines/index.html
+default: &default
+    after-steps:
+        - script:
+            name: set variables
+            code: |
+                # NOTE: override .ruby-version in pretty-slack-notify
+                export RBENV_VERSION=2.3.1
+        - script:
+            name: remove all vms
+            code: vagrant destroy -f
+
+        - wantedly/pretty-slack-notify:
+            webhook_url: $SLACK_WEBHOOK_URL
+            username: wercker_build
+
 build:
-    # Steps make up the actions in your pipeline
-    # Read more about steps on our dev center:
-    # http://devcenter.wercker.com/docs/steps/index.html
+    steps:
+
+build-centos70:
+    <<: *default
     steps:
         - script:
             name: setup
@@ -29,23 +42,20 @@ build:
             jobs: 4
 
         - script:
-            name: test centos70
+            name: build CentOS 7.0
             code: ./ci/build.sh centos70
 
+build-debian8:
+    <<: *default
+    steps:
         - script:
-            name: test debian8
+            name: setup
+            code: ./ci/setup.sh
+
+        - bundle-install:
+            jobs: 4
+
+        - script:
+            name: build Debian 8
             code: ./ci/build.sh debian8
 
-    after-steps:
-        - script:
-            name: set variables
-            code: |
-                # NOTE: override .ruby-version in pretty-slack-notify
-                export RBENV_VERSION=2.3.1
-        - script:
-            name: destroy all vms
-            code: vagrant destroy -f
-
-        - wantedly/pretty-slack-notify:
-            webhook_url: $SLACK_WEBHOOK_URL
-            username: wercker_build
