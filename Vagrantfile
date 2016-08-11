@@ -28,7 +28,7 @@ Vagrant.configure(2) do |config|
     c.vm.provider :digital_ocean do |provider, override|
       provider.image = "centos-7-0-x64"
     end
-    c.vm.hostname  = 'itamae-centos70'
+    c.vm.hostname  = 'itamae-jenkins-centos70'
     c.vm.hostname  += "-#{ENV['WERCKER_RUN_ID']}" if ENV['WERCKER_RUN_ID']
   end
 
@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
     c.vm.provider :digital_ocean do |provider, override|
       provider.image = "debian-8-x64"
     end
-    c.vm.hostname  = 'itamae-debian8'
+    c.vm.hostname  = 'itamae-jenkins-debian8'
     c.vm.hostname  += "-#{ENV['WERCKER_RUN_ID']}" if ENV['WERCKER_RUN_ID']
   end
 
