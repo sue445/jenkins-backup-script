@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
       provider.image = "centos-7-0-x64"
     end
     c.vm.hostname  = 'itamae-centos70'
-    c.vm.hostname  += "-#{ENV['WERCKER_BUILD_ID']}" if ENV['WERCKER_BUILD_ID']
+    c.vm.hostname  += "-#{ENV['WERCKER_RUN_ID']}" if ENV['WERCKER_RUN_ID']
   end
 
   config.vm.define :debian8 do |c|
@@ -38,7 +38,7 @@ Vagrant.configure(2) do |config|
       provider.image = "debian-8-x64"
     end
     c.vm.hostname  = 'itamae-debian8'
-    c.vm.hostname  += "-#{ENV['WERCKER_BUILD_ID']}" if ENV['WERCKER_BUILD_ID']
+    c.vm.hostname  += "-#{ENV['WERCKER_RUN_ID']}" if ENV['WERCKER_RUN_ID']
   end
 
   # The most common configuration options are documented and commented below.
