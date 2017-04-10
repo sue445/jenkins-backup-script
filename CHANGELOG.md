@@ -1,6 +1,13 @@
 # Changelog
 ## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.8...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.9...master)
+
+## 0.1.9
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.8...0.1.9)
+
+* Fix. Script fails when a folder exists with no jobs in it
+  * https://github.com/sue445/jenkins-backup-script/issues/50
+  * https://github.com/sue445/jenkins-backup-script/pull/52
 
 ## 0.1.8
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.7...0.1.8)
