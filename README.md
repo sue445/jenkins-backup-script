@@ -54,7 +54,8 @@ ex.
 
 # Operability confirmed
 * Debian jessie
-* CentOS 7.0
+* Debian stretch
+* CentOS 7
 
 ## Testing
 requirements [Vagrant](https://www.vagrantup.com/)
