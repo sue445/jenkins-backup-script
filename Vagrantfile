@@ -41,6 +41,15 @@ Vagrant.configure(2) do |config|
     c.vm.hostname  += "-#{ENV['WERCKER_RUN_ID']}" if ENV['WERCKER_RUN_ID']
   end
 
+  config.vm.define :debian9 do |c|
+    c.vm.box = "debian/stretch64"
+    c.vm.provider :digital_ocean do |provider, override|
+      provider.image = "debian-9-x64"
+    end
+    c.vm.hostname  = 'itamae-jenkins-debian9'
+    c.vm.hostname  += "-#{ENV['WERCKER_RUN_ID']}" if ENV['WERCKER_RUN_ID']
+  end
+
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.

@@ -59,3 +59,16 @@ build-debian8:
             name: build Debian 8
             code: ./ci/build.sh debian8
 
+build-debian9:
+    <<: *default
+    steps:
+        - script:
+            name: setup
+            code: ./ci/setup.sh
+
+        - bundle-install:
+            jobs: 4
+
+        - script:
+            name: build Debian 9
+            code: ./ci/build.sh debian9
