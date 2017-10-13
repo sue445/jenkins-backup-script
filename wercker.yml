@@ -31,7 +31,7 @@ default: &default
 build:
     steps:
 
-build-centos70:
+build-centos7:
     <<: *default
     steps:
         - script:
@@ -42,8 +42,8 @@ build-centos70:
             jobs: 4
 
         - script:
-            name: build CentOS 7.0
-            code: ./ci/build.sh centos70
+            name: build CentOS 7
+            code: ./ci/build.sh centos7
 
 build-debian8:
     <<: *default

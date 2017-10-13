@@ -23,12 +23,12 @@ Vagrant.configure(2) do |config|
     end
   end
 
-  config.vm.define :centos70 do |c|
+  config.vm.define :centos7 do |c|
     c.vm.box = "centos/7"
     c.vm.provider :digital_ocean do |provider, override|
       provider.image = "centos-7-x64"
     end
-    c.vm.hostname  = 'itamae-jenkins-centos70'
+    c.vm.hostname  = 'itamae-jenkins-centos7'
     c.vm.hostname  += "-#{ENV['WERCKER_RUN_ID']}" if ENV['WERCKER_RUN_ID']
   end
 
