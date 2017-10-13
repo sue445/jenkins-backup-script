@@ -54,7 +54,8 @@ ex.
 
 # Operability confirmed
 * Debian jessie
-* CentOS 7.0
+* Debian stretch
+* CentOS 7
 
 ## Testing
 requirements [Vagrant](https://www.vagrantup.com/)
@@ -63,9 +64,9 @@ requirements [Vagrant](https://www.vagrantup.com/)
 gem install bundler -v 1.10.6
 bundle install
 
-vagrant up centos70
-bundle exec rake itamae:centos70
-bundle exec rake spec:centos70
+vagrant up centos7
+bundle exec rake itamae:centos7
+bundle exec rake spec:centos7
 ```
 
 # Tips
