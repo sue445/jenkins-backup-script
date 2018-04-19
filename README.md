@@ -1,6 +1,6 @@
 # Jenkins backup script
 
-[![wercker status](https://app.wercker.com/status/17ca82b64d66756a966db78695ad4c8f/m/master "wercker status")](https://app.wercker.com/project/bykey/17ca82b64d66756a966db78695ad4c8f)
+[![Build Status](https://travis-ci.org/sue445/jenkins-backup-script.svg?branch=master)](https://travis-ci.org/sue445/jenkins-backup-script)
 
 Archive Jenkins settings and plugins
 
