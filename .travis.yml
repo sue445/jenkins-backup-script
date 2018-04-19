@@ -1,0 +1,27 @@
+language: ruby
+sudo: required
+services:
+- docker
+rvm:
+- 2.5
+env:
+- IMAGE=centos:6
+- IMAGE=centos:7
+- IMAGE=debian:wheezy
+- IMAGE=debian:jessie
+- IMAGE=debian:stretch
+bundler_args: "--jobs=4"
+cache: bundler
+before_install:
+- gem update --system --no-document
+- gem install bundler --no-document
+script:
+- bundle exec itamae docker --node-yaml=spec/node.yml spec/recipes/bootstrap.rb --image=$IMAGE --tag local:latest
+- DOCKER_IMAGE=local:latest bundle exec rspec
+branches:
+  only:
+  - master
+notifications:
+  email: false
+  slack:
+    secure: AP3A/R0LPAJ4es8RYbS3/uOYOvA1Sfx6NrMDBtHkmok+30XnC5m06t764OnnVTwql+v94vPLcUznoSn9NA/pLi/+0HRMn6be+ykhHhc3w3BYez5htAUrP73K4dEOABCNAXgFjOuZ3UC+BhibjOx6wj1TWJHFNsdZ1RBsOjzjNhU=
