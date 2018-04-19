@@ -3,6 +3,10 @@ GEM
   specs:
     ansi (1.5.0)
     diff-lcs (1.2.5)
+    docker-api (1.34.2)
+      excon (>= 0.47.0)
+      multi_json
+    excon (0.62.0)
     hashie (3.4.3)
     itamae (1.9.6)
       ansi
@@ -50,6 +54,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  docker-api
   itamae
   rake
   serverspec
