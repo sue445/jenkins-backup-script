@@ -50,10 +50,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (>= 1.5.2, <= 1.10.6)
   itamae
   rake
   serverspec
 
 BUNDLED WITH
-   1.10.6
+   1.16.1
