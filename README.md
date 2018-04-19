@@ -58,15 +58,13 @@ ex.
 * CentOS 7
 
 ## Testing
-requirements [Vagrant](https://www.vagrantup.com/)
+requirements [Docker](https://www.docker.com/)
 
 ```sh
-gem install bundler -v 1.10.6
 bundle install
 
-vagrant up centos7
-bundle exec rake itamae:centos7
-bundle exec rake spec:centos7
+bundle exec itamae docker --node-yaml=spec/node.yml spec/recipes/bootstrap.rb --image=centos:7 --tag local:latest
+DOCKER_IMAGE=local:latest bundle exec rspec
 ```
 
 # Tips
