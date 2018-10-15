@@ -17,7 +17,7 @@ GEM
     multi_json (1.13.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (4.2.0)
+    net-ssh (5.0.2)
     net-telnet (0.1.1)
     rake (12.3.1)
     rspec (3.7.0)
@@ -43,10 +43,10 @@ GEM
       rspec-its
       specinfra (~> 2.72)
     sfl (2.3)
-    specinfra (2.73.4)
+    specinfra (2.76.2)
       net-scp
-      net-ssh (>= 2.7, < 5.0)
-      net-telnet
+      net-ssh (>= 2.7)
+      net-telnet (= 0.1.1)
       sfl
     thor (0.20.0)
 
