@@ -13,8 +13,8 @@ env:
 bundler_args: "--jobs=4"
 cache: bundler
 before_install:
-  - gem update --system --no-document
-  - gem install bundler --no-document
+  - travis_retry gem update --system || travis_retry gem update --system 2.7.8
+  - travis_retry gem install bundler --no-document || travis_retry gem install bundler --no-document -v 1.17.3
 script:
   - bundle exec itamae docker --node-yaml=spec/node.yml spec/recipes/bootstrap.rb --image=$IMAGE --tag local:latest
   - DOCKER_IMAGE=local:latest bundle exec rspec
