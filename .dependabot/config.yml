@@ -1,0 +1,28 @@
+# c.f. https://dependabot.com/docs/config-file/
+version: 1
+
+update_configs:
+  - package_manager: "ruby:bundler"
+
+    directory: "/"
+
+    update_schedule: "daily"
+
+    default_assignees:
+      - sue445
+
+    allowed_updates:
+      - match:
+          # Disable. Only top-level dependencies (and security patches for subdependencies)
+          update_type: "all"
+
+    automerged_updates:
+      - match:
+          dependency_type: "development"
+          update_type: "all"
+      - match:
+          dependency_type: "production"
+          update_type: "semver:patch"
+
+    # Enable. Only lockfile updates (ignore updates that require Gemfile changes)
+    version_requirement_updates: "off"
