@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-group :test do
+group :test, :development do
   gem "docker-api"
   gem "itamae"
   gem "rake"
