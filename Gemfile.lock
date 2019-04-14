@@ -6,7 +6,7 @@ GEM
     docker-api (1.34.2)
       excon (>= 0.47.0)
       multi_json
-    excon (0.62.0)
+    excon (0.63.0)
     hashie (3.6.0)
     itamae (1.10.3)
       ansi
