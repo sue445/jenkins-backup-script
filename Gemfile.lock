@@ -8,7 +8,7 @@ GEM
       multi_json
     excon (0.64.0)
     hashie (3.6.0)
-    itamae (1.10.3)
+    itamae (1.10.4)
       ansi
       hashie
       schash (~> 0.1.0)
