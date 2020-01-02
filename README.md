@@ -53,8 +53,11 @@ ex.
 ```
 
 # Operability confirmed
+* Debian wheezy
 * Debian jessie
 * Debian stretch
+* Debian buster
+* CentOS 6
 * CentOS 7
 
 ## Testing

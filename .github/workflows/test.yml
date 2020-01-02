@@ -22,6 +22,7 @@ jobs:
           - debian:wheezy
           - debian:jessie
           - debian:stretch
+          - debian:buster
         include:
           - ruby: 2.5.0
             runner: ubuntu-latest
