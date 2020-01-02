@@ -1,6 +1,6 @@
 # Jenkins backup script
 
-[![Build Status](https://travis-ci.org/sue445/jenkins-backup-script.svg?branch=master)](https://travis-ci.org/sue445/jenkins-backup-script)
+[![Build Status](https://github.com/sue445/jenkins-backup-script/workflows/test/badge.svg?branch=master)](https://github.com/sue445/jenkins-backup-script/actions?query=workflow%3Atest)
 
 Archive Jenkins settings and plugins
 

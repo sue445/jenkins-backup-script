@@ -1,0 +1,131 @@
+name: test
+
+on:
+  push:
+
+env:
+  CI: "true"
+
+jobs:
+  test:
+    runs-on: ${{ matrix.runner }}
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        ruby:
+          - 2.5.0
+        image:
+          - centos:6
+          - centos:7
+          - debian:wheezy
+          - debian:jessie
+          - debian:stretch
+        include:
+          - ruby: 2.5.0
+            runner: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up rbenv
+        uses: masa-iwasaki/setup-rbenv@1.1.0
+
+      - name: Cache RBENV_ROOT
+        uses: actions/cache@v1
+        id: cache_rbenv
+        with:
+          path: ~/.rbenv/versions
+          key: v1-rbenv-${{ runner.os }}-${{ matrix.ruby }}
+        if: "!endsWith(matrix.ruby, '-dev')"
+
+      - name: Reinstall libssl-dev
+        run: |
+          set -xe
+          sudo apt-get remove -y libssl-dev
+          sudo apt-get install -y libssl-dev=1.0.2g-1ubuntu4.15
+        if: matrix.runner == 'ubuntu-16.04'
+
+      - name: Install Ruby
+        run: |
+          set -xe
+          eval "$(rbenv init -)"
+          rbenv install -s $RBENV_VERSION
+
+          gem install bundler --no-document -v 1.17.3 || true
+        env:
+          RBENV_VERSION: ${{ matrix.ruby }}
+        continue-on-error: ${{ endsWith(matrix.ruby, '-dev') }}
+
+      - name: Generate unique cache key
+        run: uuidgen > uuid.txt
+
+      - name: Cache vendor/bundle
+        uses: actions/cache@v1
+        id: cache_gem
+        with:
+          path: vendor/bundle
+          key: v1-gem-${{ runner.os }}-${{ matrix.ruby }}-${{ hashFiles('uuid.txt') }}
+          restore-keys: |
+            v1-gem-${{ runner.os }}-${{ matrix.ruby }}-
+        continue-on-error: ${{ endsWith(matrix.ruby, '-dev') }}
+
+      - name: bundle install
+        run: |
+          set -xe
+          eval "$(rbenv init -)"
+          bundle config path vendor/bundle
+          bundle install --jobs $(nproc) --retry 3
+        env:
+          RBENV_VERSION: ${{ matrix.ruby }}
+        continue-on-error: ${{ endsWith(matrix.ruby, '-dev') }}
+
+      - name: Run Itamae
+        run: |
+          set -xe
+          eval "$(rbenv init -)"
+
+          bundle exec itamae docker --node-yaml=spec/node.yml spec/recipes/bootstrap.rb --image=$IMAGE --tag local:latest
+        env:
+          RBENV_VERSION: ${{ matrix.ruby }}
+          IMAGE: ${{ matrix.image }}
+        continue-on-error: ${{ endsWith(matrix.ruby, '-dev') }}
+
+      - name: Run Serverspec
+        run: |
+          set -xe
+          eval "$(rbenv init -)"
+
+          bundle exec rspec
+        env:
+          RBENV_VERSION: ${{ matrix.ruby }}
+          DOCKER_IMAGE: local:latest
+        continue-on-error: ${{ endsWith(matrix.ruby, '-dev') }}
+
+      - name: Slack Notification (not success)
+        uses: homoluctus/slatify@v2.0.0
+        if: "! success()"
+        with:
+          job_name: ${{ format('*build* ({0}, {1})', matrix.ruby, matrix.image) }}
+          type: ${{ job.status }}
+          icon_emoji: ":octocat:"
+          url: ${{ secrets.SLACK_WEBHOOK }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  notify:
+    needs:
+      - test
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Slack Notification (success)
+        uses: homoluctus/slatify@v2.0.0
+        if: always()
+        with:
+          job_name: '*build*'
+          type: ${{ job.status }}
+          icon_emoji: ":octocat:"
+          url: ${{ secrets.SLACK_WEBHOOK }}
+          token: ${{ secrets.GITHUB_TOKEN }}
