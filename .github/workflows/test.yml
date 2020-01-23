@@ -105,7 +105,7 @@ jobs:
         continue-on-error: ${{ endsWith(matrix.ruby, '-dev') }}
 
       - name: Slack Notification (not success)
-        uses: homoluctus/slatify@v2.0.0
+        uses: homoluctus/slatify@master
         if: "! success()"
         with:
           job_name: ${{ format('*build* ({0}, {1})', matrix.ruby, matrix.image) }}
@@ -122,7 +122,7 @@ jobs:
 
     steps:
       - name: Slack Notification (success)
-        uses: homoluctus/slatify@v2.0.0
+        uses: homoluctus/slatify@master
         if: always()
         with:
           job_name: '*build*'
