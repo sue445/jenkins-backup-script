@@ -2,6 +2,11 @@ name: test
 
 on:
   push:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 env:
   CI: "true"
@@ -107,6 +112,7 @@ jobs:
       - name: Slack Notification (not success)
         uses: homoluctus/slatify@master
         if: "! success()"
+        continue-on-error: true
         with:
           job_name: ${{ format('*build* ({0}, {1})', matrix.ruby, matrix.image) }}
           type: ${{ job.status }}
@@ -124,6 +130,7 @@ jobs:
       - name: Slack Notification (success)
         uses: homoluctus/slatify@master
         if: always()
+        continue-on-error: true
         with:
           job_name: '*build*'
           type: ${{ job.status }}
