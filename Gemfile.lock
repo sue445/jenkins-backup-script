@@ -3,7 +3,7 @@ GEM
   specs:
     ansi (1.5.0)
     diff-lcs (1.4.4)
-    docker-api (1.34.2)
+    docker-api (2.0.0)
       excon (>= 0.47.0)
       multi_json
     excon (0.76.0)
