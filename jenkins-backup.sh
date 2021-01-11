@@ -58,7 +58,7 @@ function main() {
   fi
 
   rm -rf "${ARC_DIR}" "{$TMP_TAR_NAME}"
-  for plugin in plugins jobs users secrets nodes; do
+  for plugin in plugins jobs users secrets nodes labels; do
     mkdir -p "${ARC_DIR}/${plugin}"
   done
 
