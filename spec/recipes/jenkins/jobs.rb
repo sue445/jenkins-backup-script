@@ -11,6 +11,7 @@ end
 
 [
   "jobs/example_job/config.xml",
+  "jobs/example_job/nextBuildNumber",
   "jobs/space contain job/config.xml",
 ].each do |file|
   remote_file "#{node[:jenkins_home]}/#{file}" do
