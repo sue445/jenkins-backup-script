@@ -1,6 +1,12 @@
 # Changelog
-## master
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.9...master)
+## Unreleased
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.10...master)
+
+## 0.1.10
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.9...0.1.10)
+
+* Added fix for storing nextBuildNumber
+  * https://github.com/sue445/jenkins-backup-script/pull/217
 
 ## 0.1.9
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.8...0.1.9)
