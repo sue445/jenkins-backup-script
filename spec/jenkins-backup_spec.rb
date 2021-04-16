@@ -3,6 +3,7 @@ ARCHIVED_FILES = [
   "jenkins-backup/jobs/",
   "jenkins-backup/jobs/example_job/",
   "jenkins-backup/jobs/example_job/config.xml",
+  "jenkins-backup/jobs/example_job/nextBuildNumber",
   "jenkins-backup/jobs/space contain job/",
   "jenkins-backup/jobs/space contain job/config.xml",
   "jenkins-backup/jobs/example_folder/",
