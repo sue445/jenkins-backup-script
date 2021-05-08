@@ -5,6 +5,7 @@ updates:
     schedule:
       interval: daily
       timezone: Asia/Tokyo
+      time: "05:00"
     open-pull-requests-limit: 99
     assignees:
       - sue445
