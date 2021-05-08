@@ -1,11 +1,11 @@
 version: 2
 updates:
-- package-ecosystem: bundler
-  directory: "/"
-  schedule:
-    interval: daily
-    timezone: Asia/Tokyo
-  open-pull-requests-limit: 99
-  assignees:
-  - sue445
-  versioning-strategy: lockfile-only
+  - package-ecosystem: bundler
+    directory: "/"
+    schedule:
+      interval: daily
+      timezone: Asia/Tokyo
+    open-pull-requests-limit: 99
+    assignees:
+      - sue445
+    versioning-strategy: lockfile-only
