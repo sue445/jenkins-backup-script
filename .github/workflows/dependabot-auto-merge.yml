@@ -1,0 +1,29 @@
+name: dependabot-auto-merge
+
+on:
+  pull_request_target:
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+
+    if: github.actor == 'dependabot[bot]'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+        with:
+          github-token: ${{ secrets.GH_PAT_DEPENDABOT_AUTO_MERGE }}
+          config: .github/dependabot-auto-merge.yml
+
+      - name: Slack Notification (not success)
+        uses: lazy-actions/slatify@master
+        if: "! success()"
+        continue-on-error: true
+        with:
+          job_name: '*auto-merge*'
+          type: ${{ job.status }}
+          icon_emoji: ":octocat:"
+          url: ${{ secrets.SLACK_WEBHOOK }}
+          token: ${{ secrets.GITHUB_TOKEN }}
