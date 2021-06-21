@@ -37,7 +37,7 @@ GEM
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
     schash (0.1.2)
-    serverspec (2.41.6)
+    serverspec (2.41.7)
       multi_json
       rspec (~> 3.0)
       rspec-its
