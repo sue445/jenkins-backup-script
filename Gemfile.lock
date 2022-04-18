@@ -8,7 +8,7 @@ GEM
       multi_json
     excon (0.84.0)
     hashie (5.0.0)
-    itamae (1.12.5)
+    itamae (1.12.6)
       ansi
       hashie
       schash (~> 0.1.0)
@@ -43,12 +43,12 @@ GEM
       rspec-its
       specinfra (~> 2.72)
     sfl (2.3)
-    specinfra (2.83.1)
+    specinfra (2.83.2)
       net-scp
       net-ssh (>= 2.7)
       net-telnet (= 0.1.1)
       sfl
-    thor (1.1.0)
+    thor (1.2.1)
 
 PLATFORMS
   ruby
