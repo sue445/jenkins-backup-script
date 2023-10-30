@@ -19,7 +19,7 @@ GEM
       net-ssh (>= 2.6.5, < 8.0.0)
     net-ssh (6.1.0)
     net-telnet (0.1.1)
-    rake (13.0.6)
+    rake (13.1.0)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
       rspec-expectations (~> 3.12.0)
