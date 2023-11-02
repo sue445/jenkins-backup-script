@@ -58,12 +58,15 @@ function main() {
   fi
 
   rm -rf "${ARC_DIR}" "{$TMP_TAR_NAME}"
-  for plugin in plugins jobs users secrets nodes; do
+  for plugin in plugins jobs users secrets nodes labels; do
     mkdir -p "${ARC_DIR}/${plugin}"
   done
 
   cp "${JENKINS_HOME}/"*.xml "${ARC_DIR}"
 
+  cp "${JENKINS_HOME}/.owner" "${ARC_DIR}" 
+  ls "${JENKINS_HOME}/plugins" > ${ARC_DIR}/content_of_plugins_folder.txt
+  
   cp "${JENKINS_HOME}/plugins/"*.[hj]pi "${ARC_DIR}/plugins"
   hpi_pinned_count=$(find ${JENKINS_HOME}/plugins/ -name *.hpi.pinned | wc -l)
   jpi_pinned_count=$(find ${JENKINS_HOME}/plugins/ -name *.jpi.pinned | wc -l)
@@ -81,6 +84,10 @@ function main() {
 
   if [ "$(ls -A ${JENKINS_HOME}/nodes/)" ] ; then
     cp -R "${JENKINS_HOME}/nodes/"* "${ARC_DIR}/nodes"
+  fi
+
+  if [ "$(ls -A ${JENKINS_HOME}/labels/)" ] ; then 
+    cp -R "${JENKINS_HOME}/labels/"* "${ARC_DIR}/labels"
   fi
 
   if [ "$(ls -A ${JENKINS_HOME}/jobs/)" ] ; then
