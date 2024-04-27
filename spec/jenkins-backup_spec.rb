@@ -25,6 +25,7 @@ ARCHIVED_FILES = [
   "jenkins-backup/users/",
   "jenkins-backup/users/sue445/",
   "jenkins-backup/users/sue445/config.xml",
+  "jenkins-backup/saml-jenkins-keystore.jks",
 ]
 
 describe tar_file("/tmp/relative_archive.tar.gz") do
