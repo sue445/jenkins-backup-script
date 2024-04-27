@@ -18,6 +18,7 @@ include_recipe "./users"
 
 %w(
   hudson.model.UpdateCenter.xml
+  saml-jenkins-keystore.jks
 ).each do |file|
   remote_file "#{node[:jenkins_home]}/#{file}" do
     mode  "644"
