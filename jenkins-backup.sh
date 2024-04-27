@@ -64,6 +64,11 @@ function main() {
 
   cp "${JENKINS_HOME}/"*.xml "${ARC_DIR}"
 
+  jks_count=$(find ${JENKINS_HOME} -maxdepth 1 -type f -name *.jks | wc -l)
+  if [ ${jks_count} -ne 0 ]; then
+    cp "${JENKINS_HOME}/"*.jks "${ARC_DIR}/"
+  fi
+
   cp "${JENKINS_HOME}/plugins/"*.[hj]pi "${ARC_DIR}/plugins"
   hpi_pinned_count=$(find ${JENKINS_HOME}/plugins/ -name *.hpi.pinned | wc -l)
   jpi_pinned_count=$(find ${JENKINS_HOME}/plugins/ -name *.jpi.pinned | wc -l)
