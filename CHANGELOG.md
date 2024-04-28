@@ -1,6 +1,12 @@
 # Changelog
 ## Unreleased
-[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.10...master)
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.11...master)
+
+## 0.1.11
+[full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.10...0.1.11)
+
+* Backup jks files
+  * https://github.com/sue445/jenkins-backup-script/pull/251
 
 ## 0.1.10
 [full changelog](https://github.com/sue445/jenkins-backup-script/compare/0.1.9...0.1.10)
