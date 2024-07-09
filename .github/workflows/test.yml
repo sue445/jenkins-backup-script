@@ -19,7 +19,7 @@ jobs:
 
       matrix:
         ruby:
-          - "2.7"
+          - "3.0"
         image:
           - centos:6
           - centos:7
