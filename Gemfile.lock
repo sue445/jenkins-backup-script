@@ -3,10 +3,10 @@ GEM
   specs:
     ansi (1.5.0)
     diff-lcs (1.5.0)
-    docker-api (2.3.0)
+    docker-api (2.4.0)
       excon (>= 0.64.0)
       multi_json
-    excon (0.111.0)
+    excon (1.1.0)
     hashie (5.0.0)
     itamae (1.14.1)
       ansi
