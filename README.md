@@ -1,6 +1,5 @@
 # Jenkins backup script
-
-[![Build Status](https://github.com/sue445/jenkins-backup-script/workflows/test/badge.svg?branch=master)](https://github.com/sue445/jenkins-backup-script/actions?query=workflow%3Atest)
+[![test](https://github.com/sue445/jenkins-backup-script/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/jenkins-backup-script/actions/workflows/test.yml)
 
 Archive Jenkins settings and plugins
 
