@@ -50,7 +50,7 @@ GEM
       net-ssh (>= 2.7)
       net-telnet
       sfl
-    thor (1.2.1)
+    thor (1.4.0)
 
 PLATFORMS
   ruby
