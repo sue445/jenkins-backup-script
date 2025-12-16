@@ -59,17 +59,16 @@ jobs:
           webhook-url: ${{ secrets.SLACK_WEBHOOK }}
           matrix: ${{ toJson(matrix) }}
 
-  notify:
+  all-pass:
+    if: always()
+
     needs:
       - test
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Slack Notification (success)
-        uses: act10ns/slack@v2
-        if: always()
-        continue-on-error: true
+      - name: check dependent jobs
+        uses: re-actors/alls-green@05ac9388f0aebcb5727afa17fcccfecd6f8ec5fe # v1.2.2
         with:
-          status: ${{ job.status }}
-          webhook-url: ${{ secrets.SLACK_WEBHOOK }}
+          jobs: ${{ toJSON(needs) }}
