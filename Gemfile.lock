@@ -2,19 +2,21 @@ GEM
   remote: https://rubygems.org/
   specs:
     ansi (1.5.0)
-    base64 (0.2.0)
+    base64 (0.3.0)
     diff-lcs (1.6.1)
     docker-api (2.4.0)
       excon (>= 0.64.0)
       multi_json
     excon (1.1.0)
-    hashie (5.0.0)
-    itamae (1.14.1)
+    hashie (5.1.0)
+      logger
+    itamae (1.14.2)
       ansi
       hashie
       schash (~> 0.1.0)
       specinfra (>= 2.64.0, < 3.0.0)
       thor (>= 1.0.0)
+    logger (1.7.0)
     multi_json (1.15.0)
     net-scp (4.1.0)
       net-ssh (>= 2.6.5, < 8.0.0)
@@ -44,7 +46,7 @@ GEM
       rspec-its
       specinfra (~> 2.72)
     sfl (2.3)
-    specinfra (2.94.0)
+    specinfra (2.94.1)
       base64
       net-scp
       net-ssh (>= 2.7)
