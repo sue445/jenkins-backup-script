@@ -20,7 +20,7 @@ GEM
     multi_json (1.15.0)
     net-scp (4.1.0)
       net-ssh (>= 2.6.5, < 8.0.0)
-    net-ssh (7.3.0)
+    net-ssh (7.3.1)
     net-telnet (0.2.0)
     rake (13.3.1)
     rspec (3.13.0)
