@@ -51,7 +51,7 @@ jobs:
           DOCKER_IMAGE: local:latest
 
       - name: Slack Notification (not success)
-        uses: act10ns/slack@cfcc30955fe9377f4f55e1079e5419ee1014269f # v2
+        uses: act10ns/slack@2f01f46db9f41c75a04d93c6ce310bc51db7cb50 # v2
         if: "! success()"
         continue-on-error: true
         with:
