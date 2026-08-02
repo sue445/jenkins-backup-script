@@ -7,7 +7,8 @@ GEM
     docker-api (2.4.0)
       excon (>= 0.64.0)
       multi_json
-    excon (1.1.0)
+    excon (1.5.0)
+      logger
     hashie (5.1.0)
       logger
     itamae (1.14.2)
@@ -70,7 +71,7 @@ CHECKSUMS
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   diff-lcs (1.6.1) sha256=12a5a83f3e37a8e2f4427268e305914d5f1879f22b4e73bb1a09f76a3dd86cd4
   docker-api (2.4.0) sha256=824be734f4cc8718189be9c8e795b6414acbbf7e8b082a06f959a27dd8dd63e6
-  excon (1.1.0) sha256=e310c3e32323a704c1c9b833f9789786a495369e4e095eff47385efe09db5a86
+  excon (1.5.0) sha256=c503ad1d0123bc8ab2a062ff3789dc891ec368cb9e13765ab88a9c58c8bb6d50
   hashie (5.1.0) sha256=c266471896f323c446ea8207f8ffac985d2718df0a0ba98651a3057096ca3870
   itamae (1.14.2) sha256=9e278207f6a252960b66a1a8b0833c0b4f59f0d0dd00f09858fa2f1439d1bef8
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
