@@ -18,8 +18,6 @@ jobs:
       fail-fast: false
 
       matrix:
-        ruby:
-          - "3.0"
         image:
           - centos:6
           - centos:7
@@ -33,7 +31,7 @@ jobs:
 
       - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0
         with:
-          ruby-version: ${{ matrix.ruby }}
+          ruby-version: ruby
           bundler-cache: true
 
       - name: Run Itamae
