@@ -21,7 +21,7 @@ GEM
     multi_json (1.15.0)
     net-scp (4.1.0)
       net-ssh (>= 2.6.5, < 8.0.0)
-    net-ssh (7.3.4)
+    net-ssh (7.3.6)
     net-telnet (0.2.0)
     rake (13.4.2)
     rspec (3.13.0)
@@ -77,7 +77,7 @@ CHECKSUMS
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   multi_json (1.15.0) sha256=1fd04138b6e4a90017e8d1b804c039031399866ff3fbabb7822aea367c78615d
   net-scp (4.1.0) sha256=a99b0b92a1e5d360b0de4ffbf2dc0c91531502d3d4f56c28b0139a7c093d1a5d
-  net-ssh (7.3.4) sha256=59480290bd253321d9a4a90a47cb88fb21ee03a4748c861ea8e88830126391b0
+  net-ssh (7.3.6) sha256=3364dedce752b9f5221e12ae970880d871a8e733e4730e4b9bd89e0b6808ce4b
   net-telnet (0.2.0) sha256=253007c0f8dc3fd66e569d53ebbce5ef6e94d6246ab9c04d73a7629b0eebd39a
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
   rspec (3.13.0) sha256=d490914ac1d5a5a64a0e1400c1d54ddd2a501324d703b8cfe83f458337bab993
