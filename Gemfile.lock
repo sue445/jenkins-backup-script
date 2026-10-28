@@ -19,10 +19,13 @@ GEM
       thor (>= 1.0.0)
     logger (1.7.0)
     multi_json (1.15.0)
-    net-scp (4.1.0)
-      net-ssh (>= 2.6.5, < 8.0.0)
-    net-ssh (7.3.6)
+    net-scp (4.1.3)
+      net-ssh (>= 2.6.5, < 9.0.0)
+    net-ssh (8.0.1)
+      logger
+      openssl (>= 3.2.0)
     net-telnet (0.2.0)
+    openssl (4.0.2)
     rake (13.4.2)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
@@ -76,9 +79,10 @@ CHECKSUMS
   itamae (1.15.0) sha256=dc0d4a980ab8be82c551172d7f71d9b391b93c38aefe667ec086cabb764ac2c4
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   multi_json (1.15.0) sha256=1fd04138b6e4a90017e8d1b804c039031399866ff3fbabb7822aea367c78615d
-  net-scp (4.1.0) sha256=a99b0b92a1e5d360b0de4ffbf2dc0c91531502d3d4f56c28b0139a7c093d1a5d
-  net-ssh (7.3.6) sha256=3364dedce752b9f5221e12ae970880d871a8e733e4730e4b9bd89e0b6808ce4b
+  net-scp (4.1.3) sha256=df0cade5eff6cc8631bed2797f21b483585d156bdbfb5a10345705fc2ae928ff
+  net-ssh (8.0.1) sha256=6316c74a66abe867755d56b710a087d317140ac6b9dcdff81c85befcfaeb44d7
   net-telnet (0.2.0) sha256=253007c0f8dc3fd66e569d53ebbce5ef6e94d6246ab9c04d73a7629b0eebd39a
+  openssl (4.0.2) sha256=1037ad2868ae58df9ad917891c0c0f9815a1172f6846d4bcdd508e4c2ee747c2
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
   rspec (3.13.0) sha256=d490914ac1d5a5a64a0e1400c1d54ddd2a501324d703b8cfe83f458337bab993
   rspec-core (3.13.3) sha256=25136507f4f9cf2e8977a2851e64e438b4331646054e345998714108745cdfe4
