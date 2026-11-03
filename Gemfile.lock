@@ -4,11 +4,10 @@ GEM
     ansi (1.6.0)
     base64 (0.3.0)
     diff-lcs (1.6.1)
-    docker-api (2.4.0)
+    docker-api (2.5.0)
+      base64
       excon (>= 0.64.0)
-      multi_json
-    excon (1.5.0)
-      logger
+    excon (1.10.0)
     hashie (5.1.0)
       logger
     itamae (1.15.0)
@@ -18,7 +17,7 @@ GEM
       specinfra (>= 2.81.0, < 3.0.0)
       thor (>= 1.0.0)
     logger (1.7.0)
-    multi_json (1.15.0)
+    multi_json (1.21.2)
     net-scp (4.1.3)
       net-ssh (>= 2.6.5, < 9.0.0)
     net-ssh (8.0.4)
@@ -73,12 +72,12 @@ CHECKSUMS
   ansi (1.6.0) sha256=ac9ea0c0ea8d32fb4e271348e609963ac78882f34b73836c2a02b3622e666658
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   diff-lcs (1.6.1) sha256=12a5a83f3e37a8e2f4427268e305914d5f1879f22b4e73bb1a09f76a3dd86cd4
-  docker-api (2.4.0) sha256=824be734f4cc8718189be9c8e795b6414acbbf7e8b082a06f959a27dd8dd63e6
-  excon (1.5.0) sha256=c503ad1d0123bc8ab2a062ff3789dc891ec368cb9e13765ab88a9c58c8bb6d50
+  docker-api (2.5.0) sha256=9d3b6646d50698156e5514fdba6c108054e1cc9d48bbef22415f9ab83af3e376
+  excon (1.10.0) sha256=868d456c6db29f965d7cc6c5eddbb4d77df08e2a2b2dca7ca3547f2a55afc4b4
   hashie (5.1.0) sha256=c266471896f323c446ea8207f8ffac985d2718df0a0ba98651a3057096ca3870
   itamae (1.15.0) sha256=dc0d4a980ab8be82c551172d7f71d9b391b93c38aefe667ec086cabb764ac2c4
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
-  multi_json (1.15.0) sha256=1fd04138b6e4a90017e8d1b804c039031399866ff3fbabb7822aea367c78615d
+  multi_json (1.21.2) sha256=245531eaf54bdba57aba515ff08b4503505c5e09911daa89c5a561e2f85bea8e
   net-scp (4.1.3) sha256=df0cade5eff6cc8631bed2797f21b483585d156bdbfb5a10345705fc2ae928ff
   net-ssh (8.0.4) sha256=969e1675fe82894178dd04b69236e5dc404e464f57ba006e87679dc448f9bf1b
   net-telnet (0.2.0) sha256=253007c0f8dc3fd66e569d53ebbce5ef6e94d6246ab9c04d73a7629b0eebd39a
