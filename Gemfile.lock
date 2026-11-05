@@ -18,7 +18,7 @@ GEM
       thor (>= 1.0.0)
     logger (1.7.0)
     multi_json (1.21.2)
-    net-scp (4.1.3)
+    net-scp (4.2.0)
       net-ssh (>= 2.6.5, < 9.0.0)
     net-ssh (8.0.4)
       logger
@@ -78,7 +78,7 @@ CHECKSUMS
   itamae (1.15.0) sha256=dc0d4a980ab8be82c551172d7f71d9b391b93c38aefe667ec086cabb764ac2c4
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   multi_json (1.21.2) sha256=245531eaf54bdba57aba515ff08b4503505c5e09911daa89c5a561e2f85bea8e
-  net-scp (4.1.3) sha256=df0cade5eff6cc8631bed2797f21b483585d156bdbfb5a10345705fc2ae928ff
+  net-scp (4.2.0) sha256=7c85a88bcf975def58f35ffa1ea83345f018e368c97aa3b78a4fd116f4a9cd49
   net-ssh (8.0.4) sha256=969e1675fe82894178dd04b69236e5dc404e464f57ba006e87679dc448f9bf1b
   net-telnet (0.2.0) sha256=253007c0f8dc3fd66e569d53ebbce5ef6e94d6246ab9c04d73a7629b0eebd39a
   openssl (4.0.2) sha256=1037ad2868ae58df9ad917891c0c0f9815a1172f6846d4bcdd508e4c2ee747c2
