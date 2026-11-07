@@ -9,6 +9,7 @@ workflows:
         - 'actions/checkout@v7.0.1'
         - 're-actors/alls-green@v1.3.0'
         - 'ruby/setup-ruby@v1.335.0'
+    '.github/workflows/verify-actions-lockfile.yml': []
 dependencies:
     'act10ns/slack@v2.2.0':
         ref: 'v2.2.0'
